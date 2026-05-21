@@ -251,24 +251,69 @@ cat ~/.claude/projects/*/memory/MEMORY.md
 <!-- ========================================================================== -->
 <h2 id="skills">2. Skills &amp; Commands</h2>
 
+<div class="subsection">
+<h4>Skills: Direct Migration — Highly Compatible</h4>
 <div class="table-wrap">
 <table>
 <thead><tr><th style="width:28%">Claude Code</th><th style="width:28%">OpenCode Equivalent</th><th style="width:44%">Replacement Strategy</th></tr></thead>
 <tbody><tr>
 <td>
-  <strong>Skills:</strong> <code>.claude/skills/&lt;name&gt;/SKILL.md</code> with YAML frontmatter<br>
-  <strong>Commands:</strong> <code>.claude/commands/&lt;name&gt;.md</code><br>
-  <strong>Auto-invocation:</strong> Claude auto-loads skills matching task description<br>
-  <strong>Dynamic injection:</strong> <code>!`command`</code> at load time
+  <strong>Location:</strong> <code>.claude/skills/&lt;name&gt;/SKILL.md</code><br>
+  <strong>Frontmatter:</strong> <code>name</code>, <code>description</code>, <code>model</code>, <code>allowed-tools</code>, <code>context: fork</code>, <code>arguments</code>, <code>paths</code>, <code>hooks</code>, <code>disable-model-invocation</code><br>
+  <strong>Invocation:</strong> Auto-load when task matches description, OR <code>/skill-name</code>
 </td>
 <td>
-  <strong>Commands:</strong> <code>.opencode/commands/&lt;name&gt;.md</code> with YAML frontmatter<br>
-  <strong>JSON config:</strong> <code>"command"</code> key in <code>opencode.json</code><br>
-  <strong>Invocation:</strong> <code>/name</code> with <code>$ARGUMENTS</code>, <code>$1</code>, <code>$2</code> placeholders<br>
-  <strong>Dynamic injection supported:</strong> <code>`!`cmd``</code> and <code>@filename</code> in templates
+  <strong>Location:</strong> <code>.opencode/skills/&lt;name&gt;/SKILL.md</code><br>
+  <strong>Also reads from:</strong> <code>.claude/skills/</code> and <code>.agents/skills/</code><br>
+  <strong>Frontmatter:</strong> <code>name</code> (required), <code>description</code> (required), <code>license</code>, <code>compatibility</code>, <code>metadata</code><br>
+  <strong>Invocation:</strong> Agent calls <code>skill({ name: "..." })</code> on demand — not slash-command, not auto-invoked
 </td>
 <td>
-  <strong>File-based command migration:</strong>
+  <p><strong>Skills migrate directly.</strong> OpenCode can read <code>.claude/skills/</code> — just leave them in place or copy to <code>.opencode/skills/</code>:</p>
+  <pre style="margin:6px 0"><code># .claude/skills/git-release/SKILL.md
+# (OpenCode reads this directory natively — no changes needed!)
+---
+name: git-release
+description: Create a git release with tags, changelog, and GitHub release
+---
+To create a release:
+1. Run `!`git log --oneline $(git describe --tags --abbrev=0)..HEAD`!`
+2. Determine the new version from the changes
+3. Update CHANGELOG.md...</code></pre>
+  <p><strong>What OpenCode skill frontmatter supports vs Claude Code:</strong></p>
+  <table class="mini-table">
+    <tr><td><code>name</code>, <code>description</code></td><td>→ Fully compatible — required in both</td></tr>
+    <tr><td><code>model</code></td><td>→ Not supported — convert to an <strong>agent</strong> instead</td></tr>
+    <tr><td><code>allowed-tools</code></td><td>→ Not supported — convert to an <strong>agent</strong> with <code>permission</code></td></tr>
+    <tr><td><code>context: fork</code></td><td>→ Not supported — convert to a <strong>command</strong> with <code>"subtask": true</code></td></tr>
+    <tr><td><code>arguments</code></td><td>→ Not supported — convert to a <strong>command</strong> with <code>$ARGUMENTS</code></td></tr>
+    <tr><td><code>disable-model-invocation</code></td><td>→ Not needed — skills are only loaded when the agent explicitly calls the <code>skill</code> tool</td></tr>
+    <tr><td><code>hooks</code>, <code>paths</code></td><td>→ No equivalent — use plugin hooks or agent scoping</td></tr>
+  </table>
+</td>
+</tr></tbody>
+</table>
+</div>
+</div>
+
+<div class="subsection">
+<h4>Commands: Direct Migration — Fully Compatible</h4>
+<div class="table-wrap">
+<table>
+<thead><tr><th style="width:28%">Claude Code</th><th style="width:28%">OpenCode Equivalent</th><th style="width:44%">Replacement Strategy</th></tr></thead>
+<tbody><tr>
+<td>
+  <strong>Location:</strong> <code>.claude/commands/&lt;name&gt;.md</code><br>
+  <strong>Invocation:</strong> <code>/name</code>
+</td>
+<td>
+  <strong>Location:</strong> <code>.opencode/commands/&lt;name&gt;.md</code><br>
+  <strong>JSON:</strong> <code>"command"</code> key in <code>opencode.json</code><br>
+  <strong>Invocation:</strong> <code>/name</code> with <code>$ARGUMENTS</code>, <code>$1</code>, <code>$2</code><br>
+  <strong>Dynamic injection:</strong> <code>`!`cmd``</code> and <code>@filename</code>
+</td>
+<td>
+  <strong>File-based:</strong>
   <pre style="margin:6px 0"><code># .opencode/commands/deploy.md
 ---
 description: Deploy the application
@@ -279,7 +324,7 @@ Deploy the application:
 1. Run tests: `!`npm test`!`
 2. Build: `!`npm run build`!`
 3. Push to $ARGUMENTS</code></pre>
-  <strong>JSON-based command migration:</strong>
+  <strong>JSON-based:</strong>
   <pre style="margin:6px 0"><code>// opencode.json
 {
   "command": {
@@ -287,25 +332,26 @@ Deploy the application:
       "template": "Deploy:\n1. Run tests\n2. Build\n3. Push to $ARGUMENTS",
       "description": "Deploy to a target environment",
       "agent": "build",
+      "subtask": true,
       "model": "anthropic/claude-sonnet-4-20250514"
     }
   }
 }</code></pre>
-  <strong>Frontmatter mappings:</strong>
-  <table class="mini-table">
-    <tr><td><code>description</code></td><td>→ <code>"description"</code></td></tr>
-    <tr><td><code>context: fork</code></td><td>→ Use <code>"subtask": true</code> to run in a subagent (isolated context)</td></tr>
-    <tr><td><code>allowed-tools</code></td><td>→ <code>"permission"</code> on the agent definition</td></tr>
-    <tr><td><code>model</code></td><td>→ <code>"model"</code> with provider prefix</td></tr>
-    <tr><td><code>arguments</code></td><td>→ <code>$ARGUMENTS</code>, <code>$1</code>, <code>$2</code> positional params</td></tr>
-    <tr><td><code>paths</code></td><td>→ No equivalent — use agent scoping</td></tr>
-  </table>
 </td>
 </tr></tbody>
 </table>
 </div>
+</div>
 
-<div class="callout warn"><strong>No auto-invocation.</strong> Claude Code can automatically load skills when your task matches the skill's description. OpenCode commands must be invoked manually via <code>/name</code>. If you rely on auto-discovered skills, either invoke them manually or include that knowledge in globally-loaded instruction files.</div>
+<div class="callout tip"><strong>Decision guide — Skill, Command, or Agent?</strong>
+  <table class="mini-table">
+    <tr><td style="white-space:nowrap"><strong>Skill</strong></td><td>Use when the content is <strong>reference knowledge</strong> the agent should load on demand (API docs, coding conventions, release checklists). Migrates directly — even from <code>.claude/skills/</code>.</td></tr>
+    <tr><td style="white-space:nowrap"><strong>Command</strong></td><td>Use when you want a <strong>user-invoked /name</strong> slash command with arguments and dynamic injection.</td></tr>
+    <tr><td style="white-space:nowrap"><strong>Agent</strong></td><td>Use when you need <strong>tool restrictions</strong>, a <strong>specific model</strong>, or <strong>isolated context</strong> (previously Claude Code skill frontmatter fields like <code>model</code>, <code>allowed-tools</code>, <code>context: fork</code>).</td></tr>
+  </table>
+</div>
+
+<div class="callout warn"><strong>No auto-invocation.</strong> Claude Code can automatically load skills when your task matches the skill's description. In OpenCode, the agent calls the <code>skill</code> tool explicitly when it determines a skill is relevant. This is still on-demand, but the agent — not a pattern-matching system — decides when to load it.</div>
 
 
 <!-- ========================================================================== -->
@@ -880,7 +926,7 @@ You are a security reviewer. Check for OWASP Top 10:
 <tr><td class="gap-unavailable">✗</td><td><strong>MCP elicitation</strong> (server → user dialogs)</td><td>No MCP server → user input request</td><td>Inline prompts; pre-configure MCP tool inputs</td></tr>
 <tr><td class="gap-unavailable">✗</td><td><strong>CLAUDE.md directory walking</strong></td><td>No auto-discovery of parent directory configs</td><td>Explicit <code>"instructions"</code> array in opencode.json</td></tr>
 <tr><td class="gap-unavailable">✗</td><td><strong>Path-scoped rules</strong></td><td>No rules that auto-load based on file path</td><td>Agent-based scoping; flatten into global instruction files</td></tr>
-<tr><td class="gap-unavailable">✗</td><td><strong>Skill auto-invocation</strong></td><td>Commands are only user-invoked (<code>/name</code>)</td><td>Invoke manually; put always-needed knowledge in instruction files</td></tr>
+<tr><td class="gap-partial">◐</td><td><strong>Skill auto-invocation</strong></td><td>Agent calls <code>skill</code> tool on demand (not pattern-matched)</td><td>Agent decides when to load a skill based on task context; no description-based auto-match</td></tr>
 <tr><td class="gap-unavailable">✗</td><td><strong>Plugin namespacing</strong></td><td>No <code>/plugin:command</code> namespace isolation</td><td>Unique command name prefixes; document naming conventions</td></tr>
 <tr><td class="gap-unavailable">✗</td><td><strong>Plugin marketplaces</strong></td><td>No centralized plugin discovery</td><td>Distribute via npm; document in team wiki</td></tr>
 <tr><td class="gap-unavailable">✗</td><td><strong>Managed MCP exclusive control</strong></td><td>No <code>managed-mcp.json</code></td><td>Central config prescribes MCP servers; Enterprise plan for enforcement</td></tr>
