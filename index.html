@@ -388,11 +388,11 @@ Deploy the application:
 <tr><td><code>/permissions</code></td><td>Edit <code>opencode.json</code></td><td>Configure <code>"permission"</code> key directly.</td></tr>
 <tr><td><code>/context</code></td><td>No equivalent</td><td>Check <code>"instructions"</code> array to see loaded files.</td></tr>
 <tr><td><code>/ide</code></td><td>IDE extension</td><td>OpenCode offers its own IDE extension.</td></tr>
-<tr><td><code>/undo</code></td><td><code>/undo</code></td><td>OpenCode reverts changes AND restores prompt. Supports multiple consecutive undos.</td></tr>
-<tr><td><code>/redo</code></td><td><code>/redo</code></td><td>Reapplies undone changes.</td></tr>
 </tbody>
 </table>
 </div>
+
+<div class="callout tip"><strong>OpenCode-only built-in commands:</strong> OpenCode has several useful commands with no Claude Code equivalent: <code>/undo</code> (reverts changes + restores prompt, supports multiple consecutive), <code>/redo</code> (reapplies undone changes), <code>/connect</code> (manage 75+ providers interactively), and <code>/share</code> (generate shareable conversation link). Claude Code relies on git for undo/redo and has built-in sharing via Claude.ai.</div>
 
 <div class="callout tip"><strong>Custom commands:</strong> Recreate any missing slash command as <code>.opencode/commands/&lt;name&gt;.md</code> or via the <code>"command"</code> key. Templates support <code>$ARGUMENTS</code>, positional params (<code>$1</code>, <code>$2</code>), shell injection (<code>`!`cmd``</code>), and file references (<code>@filename</code>).</div>
 
@@ -409,9 +409,10 @@ Deploy the application:
   <td>
     <p>Claude Code's AgentTeam launches multiple subagents in parallel with a shared task list. Agents spawn sub-agents and delegate subtasks.</p>
     <p><strong>Workarounds:</strong></p>
-    <pre style="margin:6px 0"><code># Option 1: Run parallel sessions with different agents
-opencode --agent frontend &    # Terminal 1
-opencode --agent backend &     # Terminal 2
+    <pre style="margin:6px 0"><code># Option 1: Run parallel sessions with different agents (verified --agent flag)
+opencode run --agent frontend -p "Review frontend code" &
+opencode run --agent backend -p "Review backend code" &
+wait
 
 # Option 2: Shared task file for coordination
 echo "- [ ] Refactor auth module
@@ -421,9 +422,9 @@ echo "- [ ] Refactor auth module
 # Option 3: Orchestrate via Makefile
 .PHONY: multi-agent
 multi-agent:
-  opencode -p "Review frontend: @frontend/src/**" &
-  opencode -p "Review backend: @backend/src/**" &
-  wait</code></pre>
+	opencode run --agent frontend -f ./frontend -p "Review code" &
+	opencode run --agent backend -f ./backend -p "Review code" &
+	wait</code></pre>
     <p>For complex multi-agent workflows: LangChain, CrewAI, or CI pipeline DAGs.</p>
   </td>
 </tr>
@@ -584,9 +585,11 @@ Context from design doc: @docs/architecture.md</code></pre>
   <td>
     <p>OpenCode plugin event hooks (JS/TS):</p>
     <pre style="margin:6px 0"><code>// .opencode/plugins/setup.ts
-export default function setup() {
+import type { Plugin } from "@opencode-ai/plugin";
+
+export default function setup(): Plugin {
   return {
-    "session.start": async (ctx) => {
+    "session.created": async (ctx) => {
       await ctx.client.app.log("info", "Session starting");
       // Set up environment, warm caches, check deps
     },
@@ -619,7 +622,7 @@ export default function setup() {
 <tr>
   <td><strong>Prompt validation</strong></td>
   <td><code>UserPromptSubmit</code></td>
-  <td>Plugin hook: <code>"message.send":</code> intercept and validate prompts before sending to the model.</td>
+  <td>No direct equivalent. Rely on <code>"tui.command.execute"</code> hook for slash-command interception; for general prompts, use team conventions and code review.</td>
 </tr>
 <tr>
   <td><strong>Post-edit context injection</strong></td>
@@ -640,7 +643,7 @@ export default function setup() {
 </table>
 </div>
 
-<div class="callout info"><strong>OpenCode plugins provide hooks.</strong> While Claude Code's hook system is YAML/JSON-based with 5 types, OpenCode plugins are JS/TS modules that export hook functions for event categories: tool, session, file, command, message, permission, shell, and more. This is more flexible but requires JavaScript/TypeScript code instead of declarative config.</div>
+<div class="callout info"><strong>OpenCode plugins provide 28 hooks across 13 event categories.</strong> Confirmed hook events include: <code>tool.execute.before</code>, <code>tool.execute.after</code>, <code>session.created</code>, <code>session.updated</code>, <code>file.edited</code>, <code>shell.env</code>, <code>command.executed</code>, <code>tui.command.execute</code>, <code>tui.prompt.append</code>, <code>message.updated</code>, <code>permission.asked</code>, <code>experimental.session.compacting</code>, and more. This is more flexible than Claude Code's declarative YAML hooks but requires JavaScript/TypeScript code.</div>
 
 
 <!-- ========================================================================== -->
