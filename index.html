@@ -18,27 +18,20 @@
     --gray-900: #111827;
     --blue-50: #eff6ff;
     --blue-100: #dbeafe;
-    --blue-200: #bfdbfe;
-    --blue-500: #3b82f6;
     --blue-600: #2563eb;
     --blue-700: #1d4ed8;
     --green-50: #ecfdf5;
     --green-100: #d1fae5;
-    --green-500: #10b981;
     --green-600: #059669;
-    --green-700: #047857;
     --amber-50: #fffbeb;
     --amber-100: #fef3c7;
-    --amber-500: #f59e0b;
     --amber-600: #d97706;
-    --amber-700: #b45309;
     --red-50: #fef2f2;
     --red-100: #fee2e2;
     --red-500: #ef4444;
     --red-600: #dc2626;
     --purple-50: #f5f3ff;
     --purple-100: #ede9fe;
-    --purple-500: #8b5cf6;
     --purple-600: #7c3aed;
   }
 
@@ -53,198 +46,69 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  .container {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 48px 32px 80px;
-  }
+  .container { max-width: 960px; margin: 0 auto; padding: 40px 28px 80px; }
 
-  /* --- Header --- */
-  .header {
-    padding: 40px 0 48px;
-  }
+  /* Header */
+  .header { padding: 32px 0 44px; }
   .header h1 {
-    font-size: 2.6em;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--gray-900);
-    line-height: 1.2;
-    margin-bottom: 12px;
+    font-size: 2.4em; font-weight: 700; letter-spacing: -0.02em;
+    color: var(--gray-900); line-height: 1.2; margin-bottom: 10px;
   }
-  .header .subtitle {
-    font-size: 1.12em;
-    color: var(--gray-500);
-    line-height: 1.6;
-  }
+  .header .subtitle { font-size: 1.06em; color: var(--gray-500); line-height: 1.6; }
 
-  /* --- Typography --- */
-  h2 {
-    font-size: 1.55em;
-    font-weight: 650;
-    color: var(--gray-900);
-    margin: 56px 0 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--gray-200);
-    letter-spacing: -0.01em;
-  }
-  h3 {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: var(--gray-900);
-    margin: 40px 0 12px;
-  }
-  h4 {
-    font-size: 1.02em;
-    font-weight: 600;
-    color: var(--gray-800);
-    margin: 24px 0 8px;
-  }
-  p { margin: 12px 0; }
-  a { color: var(--blue-600); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  ul, ol { margin: 10px 0 10px 26px; }
-  li { margin: 5px 0; }
-
-  /* --- Navigation TOC --- */
+  /* TOC */
   .toc {
-    background: var(--gray-50);
-    border: 1px solid var(--gray-200);
-    border-radius: 10px;
-    padding: 24px 30px;
-    margin: 8px 0 40px;
+    background: var(--gray-50); border: 1px solid var(--gray-200);
+    border-radius: 10px; padding: 22px 28px; margin: 0 0 40px;
   }
   .toc h3 {
-    font-size: 0.8em;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--gray-500);
-    margin: 0 0 14px;
-    font-weight: 600;
+    font-size: 0.78em; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--gray-500); margin: 0 0 12px; font-weight: 600;
   }
-  .toc ol {
-    list-style: decimal;
-    margin: 0;
-    padding-left: 20px;
-  }
-  .toc ol ol { list-style: lower-alpha; margin: 4px 0 4px 10px; font-size: 0.94em; }
-  .toc li { margin: 5px 0; }
-  .toc a { color: var(--gray-700); }
-  .toc a:hover { color: var(--blue-600); }
+  .toc ol { list-style: decimal; margin: 0; padding-left: 20px; }
+  .toc ol ol { list-style: lower-alpha; margin: 3px 0 3px 12px; font-size: 0.94em; }
+  .toc li { margin: 4px 0; }
+  .toc a { color: var(--gray-700); text-decoration: none; }
+  .toc a:hover { color: var(--blue-600); text-decoration: underline; }
 
-  /* --- Tables --- */
-  .table-wrap { overflow-x: auto; margin: 18px 0; }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9em;
-    line-height: 1.55;
+  /* Headings */
+  h2 {
+    font-size: 1.5em; font-weight: 650; color: var(--gray-900);
+    margin: 48px 0 14px; padding-bottom: 7px;
+    border-bottom: 1px solid var(--gray-200); letter-spacing: -0.01em;
   }
+  h3 { font-size: 1.15em; font-weight: 600; color: var(--gray-900); margin: 36px 0 10px; }
+  p { margin: 10px 0; }
+  a { color: var(--blue-600); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; margin: 16px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.89em; line-height: 1.55; }
   thead th {
-    background: var(--gray-50);
-    text-align: left;
-    padding: 10px 14px;
-    border-bottom: 2px solid var(--gray-200);
-    font-weight: 600;
-    color: var(--gray-700);
-    font-size: 0.82em;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    white-space: nowrap;
+    background: var(--gray-50); text-align: left; padding: 10px 14px;
+    border-bottom: 2px solid var(--gray-200); font-weight: 600;
+    color: var(--gray-700); font-size: 0.82em; text-transform: uppercase;
+    letter-spacing: 0.04em; white-space: nowrap;
   }
-  tbody td {
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--gray-100);
-    vertical-align: top;
-    color: var(--gray-700);
-  }
+  tbody td { padding: 10px 14px; border-bottom: 1px solid var(--gray-100); vertical-align: top; color: var(--gray-700); }
   tbody tr:hover td { background: var(--gray-50); }
 
-  /* --- Callouts (styled like Claude Code Tip/Warning/Note) --- */
+  /* Callouts */
   .callout {
-    border-left: 4px solid var(--blue-500);
-    background: var(--blue-50);
-    padding: 14px 20px;
-    margin: 20px 0;
-    border-radius: 0 8px 8px 0;
-    font-size: 0.94em;
+    border-left: 4px solid var(--blue-600); background: var(--blue-50);
+    padding: 13px 18px; margin: 18px 0; border-radius: 0 8px 8px 0; font-size: 0.93em;
   }
-  .callout.tip    { border-left-color: var(--green-500); background: var(--green-50); }
-  .callout.warn   { border-left-color: var(--amber-500); background: var(--amber-50); }
-  .callout.danger { border-left-color: var(--red-500); background: var(--red-50); }
-  .callout.info   { border-left-color: var(--purple-500); background: var(--purple-50); }
+  .callout.tip    { border-left-color: var(--green-600); background: var(--green-50); }
+  .callout.warn   { border-left-color: var(--amber-600); background: var(--amber-50); }
+  .callout.info   { border-left-color: var(--purple-600); background: var(--purple-50); }
   .callout strong { color: var(--gray-800); }
 
-  /* --- Steps (numbered) --- */
-  .steps { counter-reset: step; margin: 24px 0; }
-  .step {
-    counter-increment: step;
-    position: relative;
-    padding: 8px 0 8px 52px;
-    margin: 16px 0;
-  }
-  .step::before {
-    content: counter(step);
-    position: absolute;
-    left: 0;
-    top: 8px;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: var(--blue-600);
-    color: #fff;
-    font-size: 0.88em;
-    font-weight: 650;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .step-title {
-    font-weight: 650;
-    color: var(--gray-900);
-    margin-bottom: 2px;
-  }
-
-  /* --- Migration Step Cards --- */
-  .migration-step {
-    background: var(--gray-50);
-    border: 1px solid var(--gray-200);
-    border-radius: 10px;
-    padding: 24px 28px;
-    margin: 20px 0;
-  }
-  .migration-step h4 {
-    margin-top: 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  /* --- Badges --- */
-  .badge {
-    display: inline-block;
-    padding: 2px 10px;
-    border-radius: 12px;
-    font-size: 0.76em;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-  }
-  .badge-cc { background: var(--blue-100); color: var(--blue-700); }
-  .badge-oc { background: var(--green-100); color: var(--green-700); }
-  .effort-low  { background: var(--green-100); color: var(--green-700); }
-  .effort-med  { background: var(--amber-100); color: var(--amber-700); }
-  .effort-high { background: var(--red-100); color: var(--red-600); }
-
-  /* --- Code --- */
+  /* Code */
   pre {
-    background: var(--gray-50);
-    border: 1px solid var(--gray-200);
-    border-radius: 8px;
-    padding: 16px 20px;
-    overflow-x: auto;
-    font-size: 0.86em;
-    line-height: 1.6;
-    margin: 14px 0;
+    background: var(--gray-50); border: 1px solid var(--gray-200);
+    border-radius: 8px; padding: 15px 18px; overflow-x: auto;
+    font-size: 0.84em; line-height: 1.6; margin: 12px 0;
   }
   code {
     font-family: "SF Mono", "Fira Code", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
@@ -252,104 +116,37 @@
   }
   pre code { font-size: 1em; color: var(--gray-800); }
   :not(pre) > code {
-    background: var(--gray-100);
-    padding: 1px 6px;
-    border-radius: 4px;
-    border: 1px solid var(--gray-200);
-    font-size: 0.88em;
-    color: var(--gray-800);
-    white-space: nowrap;
+    background: var(--gray-100); padding: 1px 6px; border-radius: 4px;
+    border: 1px solid var(--gray-200); font-size: 0.88em; color: var(--gray-800); white-space: nowrap;
   }
 
-  /* --- Cards --- */
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: 16px;
-    margin: 20px 0;
-  }
-  .card {
-    background: #fff;
-    border: 1px solid var(--gray-200);
-    border-radius: 10px;
-    padding: 22px 24px;
-    text-decoration: none;
-    color: inherit;
-    transition: border-color 0.15s, box-shadow 0.15s;
-  }
-  .card:hover {
-    border-color: var(--blue-300);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-    text-decoration: none;
-  }
-  .card-icon { font-size: 1.4em; margin-bottom: 6px; }
-  .card h4 { margin: 0 0 6px; color: var(--gray-900); font-size: 0.98em; }
-  .card p  { margin: 0; color: var(--gray-500); font-size: 0.88em; line-height: 1.5; }
+  /* Feature status labels */
+  .gap-available   { color: var(--green-600); font-weight: 600; }
+  .gap-partial     { color: var(--amber-600); font-weight: 600; }
+  .gap-unavailable { color: var(--red-500); font-weight: 600; }
 
-  /* --- Tabs --- */
-  .tabs { display: flex; gap: 0; margin: 16px 0 0; border-bottom: 2px solid var(--gray-200); }
-  .tab {
-    padding: 8px 18px;
-    font-size: 0.88em;
-    font-weight: 550;
-    color: var(--gray-500);
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -2px;
-    background: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    transition: color 0.15s, border-color 0.15s;
+  /* Subsection cards */
+  .subsection {
+    border: 1px solid var(--gray-200); border-radius: 10px; padding: 22px 26px;
+    margin: 22px 0; background: #fff;
   }
-  .tab.active { color: var(--blue-600); border-bottom-color: var(--blue-600); }
-  .tab:hover   { color: var(--gray-700); }
+  .subsection h4 { margin-top: 0; font-size: 1.02em; }
 
-  /* --- Gap table --- */
-  .gap-table { margin: 16px 0; }
-  .gap-table td { padding: 10px 14px; border-bottom: 1px solid var(--gray-100); vertical-align: top; }
-  .gap-table td:first-child { font-weight: 700; white-space: nowrap; width: 30px; text-align: center; }
-  .check  { color: var(--green-600); }
-  .cross  { color: var(--red-500); }
-  .partial { color: var(--amber-600); }
+  /* Nested mini tables inside cells */
+  .mini-table { margin: 8px 0 0; font-size: 0.94em; width: 100%; }
+  .mini-table td { padding: 3px 8px 3px 0; border: none; font-size: 0.94em; }
+  .mini-table td:first-child { white-space: nowrap; padding-right: 10px; font-weight: 600; }
 
-  /* --- Directory tree --- */
-  .tree {
-    background: var(--gray-50);
-    border: 1px solid var(--gray-200);
-    border-radius: 8px;
-    padding: 14px 20px;
-    font-family: "SF Mono", "Fira Code", "JetBrains Mono", Menlo, monospace;
-    font-size: 0.85em;
-    line-height: 1.75;
-    margin: 12px 0;
-    white-space: pre;
-    color: var(--gray-700);
+  /* Footer */
+  .footer {
+    margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--gray-200);
+    font-size: 0.86em; color: var(--gray-500);
   }
-
-  /* --- Utility --- */
-  .flex-justify { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
-  .text-sm { font-size: 0.88em; }
-  .text-xs { font-size: 0.8em; }
-  .text-muted { color: var(--gray-500); }
-  .mt-1 { margin-top: 8px; }
-  .mt-2 { margin-top: 16px; }
-  .mt-3 { margin-top: 24px; }
-  .mb-0 { margin-bottom: 0; }
-  .mb-2 { margin-bottom: 16px; }
-
-  /* --- Checklist --- */
-  .checklist { list-style: none; margin-left: 0; }
-  .checklist li { padding: 3px 0; display: flex; align-items: flex-start; gap: 8px; }
-  .checklist li input[type=checkbox] { margin-top: 4px; accent-color: var(--blue-600); transform: scale(1.1); }
 
   @media (max-width: 768px) {
-    .container { padding: 24px 16px; }
-    .header h1 { font-size: 1.8em; }
-    h2 { font-size: 1.3em; }
-    .step { padding-left: 42px; }
-    .migration-step { padding: 16px 18px; }
-    .card-grid { grid-template-columns: 1fr; }
+    .container { padding: 20px 14px; }
+    .header h1 { font-size: 1.7em; }
+    h2 { font-size: 1.25em; }
   }
 </style>
 </head>
@@ -359,661 +156,679 @@
 
 <!-- ===== HEADER ===== -->
 <div class="header">
-<h1>Claude Code → OpenCode Migration Guide</h1>
-<p class="subtitle">A comprehensive guide for teams migrating their AI coding CLI from Anthropic's Claude Code to OpenCode. Covers configuration, skills, hooks, plugins, MCP, permissions, CI/CD, and enterprise deployment. Based on both products' documentation as of May 2026.</p>
+  <h1>Claude Code → OpenCode Migration Guide</h1>
+  <p class="subtitle">A practical reference for teams migrating from Anthropic's Claude Code to OpenCode. Each section follows a consistent format: <strong>Claude Code</strong> &rarr; <strong>OpenCode equivalent</strong> &rarr; <strong>Replacement or alternative strategy</strong>.</p>
 </div>
 
 <!-- ===== TOC ===== -->
 <div class="toc">
-<h3>Table of Contents</h3>
-<ol>
-  <li><a href="#differences">Key Product Differences</a></li>
-  <li><a href="#setup">Installation &amp; Setup</a></li>
-  <li><a href="#workflow">Daily Workflow Mapping</a></li>
-  <li><a href="#config">Configuration File Migration</a>
-    <ol>
-      <li><a href="#claudemd">CLAUDE.md → AGENTS.md / instructions</a></li>
-      <li><a href="#rules">.claude/rules/ migration</a></li>
-      <li><a href="#settings">settings.json → opencode.json</a></li>
-      <li><a href="#memory">Auto Memory → Manual Context</a></li>
-    </ol>
-  </li>
-  <li><a href="#skills">Skills &amp; Commands</a></li>
-  <li><a href="#hooks">Hooks → OpenCode Equivalents</a></li>
-  <li><a href="#plugins">Plugins</a></li>
-  <li><a href="#mcp">MCP Servers</a></li>
-  <li><a href="#permissions">Permissions</a></li>
-  <li><a href="#subagents">Subagents &amp; Agent Teams</a></li>
-  <li><a href="#providers">Model &amp; Provider Selection</a></li>
-  <li><a href="#cicd">CI/CD &amp; Automation</a></li>
-  <li><a href="#enterprise">Team &amp; Enterprise</a></li>
-  <li><a href="#project-types">Migration by Project Type</a>
-    <ol>
-      <li><a href="#coding-project">Standard Coding Projects</a></li>
-      <li><a href="#prompt-project">Prompt/Skill-Driven Projects</a></li>
-      <li><a href="#monorepo">Monorepo Projects</a></li>
-    </ol>
-  </li>
-  <li><a href="#checklist">Migration Checklist</a></li>
-  <li><a href="#gap-analysis">Feature Gap Analysis</a></li>
-  <li><a href="#commands-features">Commands Reference &amp; Advanced Features</a>
-    <ol>
-      <li><a href="#slash-commands">Slash Commands Mapping</a></li>
-      <li><a href="#advanced-features">AgentTeam, UltraThink &amp; Other Features</a></li>
-    </ol>
-  </li>
-</ol>
+  <h3>Contents</h3>
+  <ol>
+    <li><a href="#config">Configuration File Migration</a>
+      <ol>
+        <li><a href="#claudemd">CLAUDE.md → AGENTS.md / instructions</a></li>
+        <li><a href="#rules">.claude/rules/ migration</a></li>
+        <li><a href="#settings">settings.json → opencode.json</a></li>
+        <li><a href="#memory">Auto Memory → Manual Context</a></li>
+      </ol>
+    </li>
+    <li><a href="#skills">Skills &amp; Commands</a></li>
+    <li><a href="#commands">Commands Reference &amp; Advanced Features</a>
+      <ol>
+        <li><a href="#slash-commands">Slash Commands Mapping</a></li>
+        <li><a href="#advanced-features">AgentTeam, UltraThink &amp; Other Features</a></li>
+      </ol>
+    </li>
+    <li><a href="#hooks">Hooks → OpenCode Equivalents</a></li>
+    <li><a href="#plugins">Plugins</a></li>
+    <li><a href="#mcp">MCP Servers</a></li>
+    <li><a href="#subagents">Subagents &amp; Agent Teams</a></li>
+    <li><a href="#gap-analysis">Feature Gap Analysis</a></li>
+  </ol>
 </div>
 
 
 <!-- ========================================================================== -->
-<!-- 1. KEY PRODUCT DIFFERENCES -->
+<!-- 1. CONFIGURATION FILE MIGRATION -->
 <!-- ========================================================================== -->
-<h2 id="differences">1. Key Product Differences</h2>
+<h2 id="config">1. Configuration File Migration</h2>
 
-<p>Understanding the fundamental architectural and philosophical differences between the two products informs every migration decision.</p>
+<p>The foundation of any migration. Configuration files define what the AI coding assistant knows about your project and what it's allowed to do.</p>
+
+<!-- 1.1 CLAUDE.md -->
+<h3 id="claudemd">1.1 CLAUDE.md → AGENTS.md / instructions</h3>
 
 <div class="table-wrap">
 <table>
 <thead>
-<tr>
-  <th style="width:24%">Aspect</th>
-  <th style="width:38%"><span class="badge badge-cc">Claude Code</span></th>
-  <th style="width:38%"><span class="badge badge-oc">OpenCode</span></th>
-</tr>
+<tr><th style="width:28%">Claude Code</th><th style="width:28%">OpenCode Equivalent</th><th style="width:44%">Replacement Strategy</th></tr>
 </thead>
 <tbody>
 <tr>
-  <td><strong>License</strong></td>
-  <td>Proprietary — free to use, requires Anthropic account</td>
-  <td>Open source (MIT)</td>
-</tr>
-<tr>
-  <td><strong>Models</strong></td>
-  <td>Claude models only (Opus, Sonnet, Haiku) via Anthropic API, Bedrock, or Vertex AI</td>
-  <td>75+ providers: Anthropic, OpenAI, Google, AWS, Azure, local (Ollama, LM Studio), GitHub Copilot, OpenRouter, and more</td>
-</tr>
-<tr>
-  <td><strong>Auth</strong></td>
-  <td>Claude subscription (Pro/Max/Team/Enterprise) or API key</td>
-  <td>Per-provider API keys via <code>/connect</code>; Zen &amp; Go subscription options</td>
-</tr>
-<tr>
-  <td><strong>Interfaces</strong></td>
-  <td>CLI, TUI, Web, Desktop, VS Code, JetBrains, Slack, GitHub Actions, GitLab CI</td>
-  <td>TUI, CLI, Web, Desktop, IDE extension</td>
-</tr>
-<tr>
-  <td><strong>Config entry point</strong></td>
-  <td><code>CLAUDE.md</code> and <code>.claude/</code> directory</td>
-  <td><code>opencode.json</code> and <code>.opencode/</code> directory</td>
-</tr>
-<tr>
-  <td><strong>Global config</strong></td>
-  <td><code>~/.claude/</code></td>
-  <td><code>~/.config/opencode/</code></td>
-</tr>
-<tr>
-  <td><strong>Instructions</strong></td>
-  <td>Markdown files: CLAUDE.md, <code>.claude/rules/*.md</code> (auto-discovered by directory walking)</td>
-  <td><code>"instructions": ["file.md", "docs/*.md"]</code> array in opencode.json (explicit paths, glob support)</td>
-</tr>
-<tr>
-  <td><strong>Skills</strong></td>
-  <td><code>SKILL.md</code> with YAML frontmatter in <code>.claude/skills/&lt;name&gt;/</code></td>
-  <td><code>.opencode/skills/</code> directory (Agent Skills compatible)</td>
-</tr>
-<tr>
-  <td><strong>Commands</strong></td>
-  <td>Flat markdown files in <code>.claude/commands/</code> (merged into skills system)</td>
-  <td><code>.opencode/commands/</code> with <code>template</code> field and <code>$ARGUMENTS</code> placeholder</td>
-</tr>
-<tr>
-  <td><strong>Hooks</strong></td>
-  <td>24+ lifecycle events, 5 hook types (command, HTTP, MCP tool, prompt, agent)</td>
-  <td>No hook system — formatters and custom tools provide limited automation</td>
-</tr>
-<tr>
-  <td><strong>Plugins</strong></td>
-  <td><code>.claude-plugin/plugin.json</code> manifest, marketplace distribution (official + community)</td>
-  <td><code>.opencode/plugins/</code> directory or npm packages via <code>"plugin"</code> config</td>
-</tr>
-<tr>
-  <td><strong>MCP</strong></td>
-  <td>Full MCP: HTTP, SSE, stdio, OAuth 2.0, tool search, channels, elicitation</td>
-  <td>MCP via <code>"mcp"</code> config key: remote (HTTP) and stdio types</td>
-</tr>
-<tr>
-  <td><strong>LSP / Code Intelligence</strong></td>
-  <td>Via plugins (TypeScript, Python, Rust, Go, etc.)</td>
-  <td>Built-in: enable with <code>"lsp": true</code>; configurable per-language</td>
-</tr>
-<tr>
-  <td><strong>Memory</strong></td>
-  <td>Auto memory at <code>~/.claude/projects/&lt;project&gt;/memory/</code> — Claude learns across sessions</td>
-  <td>No auto memory — relies on AGENTS.md and instruction files</td>
-</tr>
-<tr>
-  <td><strong>Plan Mode</strong></td>
-  <td>Toggled via <code>Shift+Tab</code> or <code>/plan</code> command</td>
-  <td>Toggled via <code>Tab</code> key in TUI</td>
-</tr>
-<tr>
-  <td><strong>Undo / Redo</strong></td>
-  <td>Not directly available — use git to revert</td>
-  <td><code>/undo</code> reverts changes and restores prompt; <code>/redo</code> reapplies</td>
-</tr>
-<tr>
-  <td><strong>Sharing</strong></td>
-  <td>Built-in via Claude.ai</td>
-  <td><code>/share</code> generates a link (data sent to opencode.ai CDN; can be disabled)</td>
-</tr>
-<tr>
-  <td><strong>Sandboxing</strong></td>
-  <td>OS-level filesystem &amp; network sandbox for Bash commands</td>
-  <td>No sandbox — relies on permissions and containerization</td>
-</tr>
-<tr>
-  <td><strong>CI/CD</strong></td>
-  <td>GitHub Actions, GitLab CI/CD with native support</td>
-  <td>GitHub Action available; CLI usable in any CI pipeline</td>
-</tr>
-<tr>
-  <td><strong>Auto-update</strong></td>
-  <td>Native installer auto-updates in background</td>
-  <td>Manual upgrades via package manager</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<div class="callout warn">
-  <strong>Critical gap:</strong> Claude Code's hooks system (24+ lifecycle events with 5 hook types) has no equivalent in OpenCode. If your team relies on PostToolUse hooks for automated linting, PreToolUse hooks for guardrails, or SessionStart hooks for environment setup, these will need external replacements — pre-commit hooks, file watchers, wrapper scripts, or CI checks.
-</div>
-
-
-<!-- ========================================================================== -->
-<!-- 2. INSTALLATION & SETUP -->
-<!-- ========================================================================== -->
-<h2 id="setup">2. Installation &amp; Setup</h2>
-
-<h3>Install Commands</h3>
-
-<div class="table-wrap">
-<table>
-<thead>
-<tr><th>Method</th><th>Claude Code</th><th>OpenCode</th></tr>
-</thead>
-<tbody>
-<tr>
-  <td><strong>macOS / Linux</strong></td>
-  <td><code>curl -fsSL https://claude.ai/install.sh | bash</code></td>
-  <td><code>curl -fsSL https://opencode.ai/install | bash</code></td>
-</tr>
-<tr>
-  <td><strong>Homebrew</strong></td>
-  <td><code>brew install --cask claude-code</code></td>
-  <td><code>brew install anomalyco/tap/opencode</code></td>
-</tr>
-<tr>
-  <td><strong>npm</strong></td>
-  <td>—</td>
-  <td><code>npm install -g opencode</code> (also Bun, pnpm, Yarn)</td>
-</tr>
-<tr>
-  <td><strong>Windows</strong></td>
-  <td><code>winget install Anthropic.ClaudeCode</code></td>
-  <td><code>choco install opencode</code> or <code>scoop install opencode</code></td>
-</tr>
-<tr>
-  <td><strong>Docker</strong></td>
-  <td>—</td>
-  <td><code>docker run ghcr.io/anomalyco/opencode</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<div class="callout info">
-  <strong>Terminal recommendation:</strong> OpenCode recommends modern terminal emulators for the best TUI experience: WezTerm, Alacritty (cross-platform), Ghostty (Linux/macOS), or Kitty (Linux/macOS).
-</div>
-
-<h3>Authentication Setup</h3>
-
-<div class="steps">
-  <div class="step">
-    <div class="step-title">Claude Code</div>
-    <p>Run <code>claude</code> and follow browser login, or use <code>/login</code>. Supports Claude Pro/Max/Team/Enterprise subscriptions, API keys (Console), or cloud providers (Bedrock, Vertex AI). Credentials are stored and you won't need to re-authenticate.</p>
-  </div>
-  <div class="step">
-    <div class="step-title">OpenCode</div>
-    <p>Run <code>opencode</code>, then use <code>/connect</code> to select from 75+ providers and enter API keys. Credentials are stored at <code>~/.local/share/opencode/auth.json</code>. For managed teams, subscribe to OpenCode Zen (curated verified models) or Go (low-cost subscription plan).</p>
-  </div>
-</div>
-
-
-<!-- ========================================================================== -->
-<!-- 3. DAILY WORKFLOW MAPPING -->
-<!-- ========================================================================== -->
-<h2 id="workflow">3. Daily Workflow Mapping</h2>
-
-<p>Most day-to-day conversational interactions are identical. Both tools follow the same agentic loop: read files, propose changes, ask approval, apply edits.</p>
-
-<div class="table-wrap">
-<table>
-<thead>
-<tr><th>Task</th><th>Claude Code</th><th>OpenCode</th></tr>
-</thead>
-<tbody>
-<tr><td>Start session</td><td><code>claude</code></td><td><code>opencode</code></td></tr>
-<tr><td>One-shot query</td><td><code>claude -p "query"</code></td><td><code>opencode -p "query"</code></td></tr>
-<tr><td>Continue session</td><td><code>claude -c</code></td><td>Resume via TUI session list</td></tr>
-<tr><td>Clear context</td><td><code>/clear</code></td><td>Start new session</td></tr>
-<tr><td>Plan mode</td><td><code>Shift+Tab</code> or permission mode</td><td><code>Tab</code> to toggle plan/build</td></tr>
-<tr><td>Undo change</td><td>Use git</td><td><code>/undo</code> (restores prompt too)</td></tr>
-<tr><td>Redo change</td><td>Use git</td><td><code>/redo</code></td></tr>
-<tr><td>Share conversation</td><td>Built-in via Claude.ai</td><td><code>/share</code> (link copied to clipboard)</td></tr>
-<tr><td>Project init</td><td><code>/init</code> → generates CLAUDE.md</td><td><code>/init</code> → generates AGENTS.md</td></tr>
-<tr><td>Check git status</td><td>"what files have I changed?"</td><td>Same natural language</td></tr>
-<tr><td>Commit changes</td><td>"commit my changes with a descriptive message"</td><td>Same natural language</td></tr>
-<tr><td>Resolve conflicts</td><td>"help me resolve merge conflicts"</td><td>Same natural language</td></tr>
-<tr><td>Switch model</td><td><code>/model</code></td><td>Configure in <code>opencode.json</code> or via TUI</td></tr>
-<tr><td>Exit</td><td><code>exit</code> or <code>Ctrl+D</code></td><td><code>exit</code> or <code>Ctrl+D</code></td></tr>
-</tbody>
-</table>
-</div>
-
-
-<!-- ========================================================================== -->
-<!-- 4. CONFIGURATION MIGRATION -->
-<!-- ========================================================================== -->
-<h2 id="config">4. Configuration File Migration</h2>
-
-<h3 id="claudemd">4.1 CLAUDE.md → AGENTS.md / instructions <span class="badge effort-med">Medium Effort</span></h3>
-
-<div class="table-wrap">
-<table>
-<thead>
-<tr><th>Claude Code</th><th>OpenCode</th></tr>
-</thead>
-<tbody>
-<tr>
-<td>
-  <strong>Files:</strong> <code>CLAUDE.md</code>, <code>.claude/CLAUDE.md</code>, <code>CLAUDE.local.md</code><br>
-  <strong>Loading:</strong> Walks directory tree upward, all discovered files concatenated<br>
-  <strong>Imports:</strong> <code>@path/to/file.md</code> inline syntax<br>
-  <strong>Managed:</strong> <code>/Library/Application Support/ClaudeCode/CLAUDE.md</code> (macOS)
-</td>
-<td>
-  <strong>Files:</strong> <code>AGENTS.md</code> (standard), plus any markdown files<br>
-  <strong>Loading:</strong> Explicit <code>"instructions"</code> array in <code>opencode.json</code> with glob support<br>
-  <strong>Substitution:</strong> <code>{file:path/to/file}</code> for file content in config values<br>
-  <strong>Managed:</strong> Enterprise central config file
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<div class="migration-step">
-<h4>Migration Steps</h4>
-<ol>
-  <li><strong>Run <code>/init</code></strong> in OpenCode to auto-generate an <code>AGENTS.md</code> from your codebase. OpenCode reads existing CLAUDE.md, .cursorrules, and .windsurfrules to bootstrap it.</li>
-  <li><strong>Convert CLAUDE.md content:</strong> Merge your CLAUDE.md conventions into <code>AGENTS.md</code>. List additional instruction files in <code>opencode.json</code>:
-
-<pre><code>// opencode.json
-{
+  <td>
+    <strong>Files:</strong> <code>CLAUDE.md</code>, <code>.claude/CLAUDE.md</code>, <code>CLAUDE.local.md</code><br>
+    <strong>Loading:</strong> Walks directory tree upward, auto-discovers and concatenates all CLAUDE.md files<br>
+    <strong>Imports:</strong> <code>@path/to/file.md</code> inline syntax
+  </td>
+  <td>
+    <strong>Files:</strong> <code>AGENTS.md</code> plus any markdown files<br>
+    <strong>Loading:</strong> Explicit <code>"instructions"</code> array in <code>opencode.json</code> with glob support<br>
+    <strong>Substitution:</strong> <code>{file:path/to/file}</code> for inline file content
+  </td>
+  <td>
+    <ol style="margin:0;padding-left:18px;">
+      <li>Run <code>/init</code> in OpenCode to auto-generate <code>AGENTS.md</code> (reads existing CLAUDE.md, .cursorrules, .windsurfrules)</li>
+      <li>List all instruction files in <code>opencode.json</code>:
+        <pre style="margin:8px 0 0"><code>{
   "instructions": [
     "AGENTS.md",
     "CONTRIBUTING.md",
-    ".cursor/rules/*.md",
-    "docs/guidelines/*.md"
+    ".cursor/rules/*.md"
   ]
-}</code></pre></li>
-  <li><strong>Handle CLAUDE.local.md:</strong> OpenCode has no direct equivalent. Options:
-    <ul>
-      <li>Keep personal preferences in <code>~/.config/opencode/opencode.json</code> with an <code>instructions</code> array pointing to personal files</li>
-      <li>Create a gitignored <code>AGENTS.local.md</code> and add it to the instructions array</li>
-    </ul>
-  </li>
-  <li><strong>Handle <code>@imports</code>:</strong> OpenCode doesn't support in-file imports. List all instruction files explicitly in the <code>instructions</code> array. Use glob patterns for whole directories.</li>
-</ol>
-
-<div class="callout tip">
-  <strong>If your repo already uses AGENTS.md:</strong> Claude Code reads CLAUDE.md not AGENTS.md (though it can import it). OpenCode natively uses AGENTS.md. If you're already maintaining an AGENTS.md for other tools like Cursor or Windsurf, OpenCode picks it up directly — no duplication needed.
-</div>
-</div>
-
-<h3 id="rules">4.2 .claude/rules/ Migration <span class="badge effort-med">Medium Effort</span></h3>
-
-<p>Claude Code's <code>.claude/rules/</code> directory supports path-scoped rules (YAML frontmatter with <code>paths:</code> glob patterns) that only load when Claude works with matching files. OpenCode loads all instruction files globally — there is no path-scoped equivalent.</p>
-
-<div class="migration-step">
-<h4>Three Migration Approaches</h4>
-
-<div class="table-wrap">
-<table>
-<thead>
-<tr><th style="width:15%">Approach</th><th style="width:45%">How It Works</th><th style="width:40%">Best For</th></tr>
-</thead>
-<tbody>
-<tr>
-  <td><strong>A. Flatten</strong></td>
-  <td>Merge all rules into <code>AGENTS.md</code> or a single instruction file. Group by topic with markdown headers. Accept the context cost of always-loaded instructions.</td>
-  <td>Small-to-medium projects; short rules files</td>
-</tr>
-<tr>
-  <td><strong>B. Agent-based</strong></td>
-  <td>Create specialized OpenCode agents for different parts of the codebase, each loading relevant instruction files. A <code>frontend</code> agent loads frontend rules; a <code>backend</code> agent loads backend rules.</td>
-  <td>Large projects with clear domain boundaries; monorepos</td>
-</tr>
-<tr>
-  <td><strong>C. Command-based</strong></td>
-  <td>Convert path-specific rules into custom commands that users invoke when working in specific areas. The command loads the relevant context as part of its template.</td>
-  <td>Rules that are task-oriented rather than always-on</td>
+}</code></pre>
+      </li>
+      <li>For <code>CLAUDE.local.md</code>: create a gitignored <code>AGENTS.local.md</code> and add it to the instructions array, or use <code>~/.config/opencode/opencode.json</code></li>
+      <li>For <code>@imports</code>: list all files explicitly (glob patterns supported)</li>
+    </ol>
+  </td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<p><strong>Agent-based example:</strong></p>
-<pre><code>// opencode.json
+<div class="callout tip">
+  <strong>If your repo already uses AGENTS.md:</strong> OpenCode natively uses it. Claude Code reads CLAUDE.md instead. If you're maintaining an AGENTS.md for Cursor or Windsurf, OpenCode picks it up directly — no duplication needed.
+</div>
+
+<!-- 1.2 .claude/rules/ -->
+<h3 id="rules">1.2 .claude/rules/ Migration</h3>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th style="width:28%">Claude Code</th><th style="width:28%">OpenCode Equivalent</th><th style="width:44%">Replacement Strategy</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td>
+    <strong>Directory:</strong> <code>.claude/rules/</code><br>
+    <strong>Scoping:</strong> YAML frontmatter with <code>paths:</code> glob patterns — rules auto-load only when Claude touches matching files
+  </td>
+  <td>
+    <strong>No path-scoped equivalent.</strong> All instruction files are loaded globally. OpenCode loads whatever is in the <code>"instructions"</code> array regardless of which file is being edited.
+  </td>
+  <td>
+    <strong>Three approaches, pick one:</strong>
+    <table class="mini-table">
+      <tr><td>A. Flatten</td><td>Merge all rules into <code>AGENTS.md</code>. Accept the context cost of always-loaded instructions. Best for small-to-medium projects.</td></tr>
+      <tr><td>B. Agent-based</td><td>Create specialized agents per domain (<code>frontend</code>, <code>backend</code>), each loading its own instruction files. Best for monorepos and large projects.</td></tr>
+      <tr><td>C. Command-based</td><td>Convert path-specific rules into custom <code>/commands</code> that users invoke when working in specific areas.</td></tr>
+    </table>
+    <pre style="margin:8px 0 0"><code>// Agent-based example: opencode.json
 {
   "agent": {
     "frontend": {
-      "description": "Frontend development — React, TypeScript, CSS",
+      "description": "React, TypeScript, CSS",
       "prompt": "{file:./opencode/agents/frontend-prompt.md}",
-      "model": "claude-sonnet-4-6"
-    },
-    "backend": {
-      "description": "Backend development — Go, PostgreSQL, gRPC",
-      "prompt": "{file:./opencode/agents/backend-prompt.md}",
       "model": "claude-sonnet-4-6"
     }
   }
 }</code></pre>
-</div>
-
-<h3 id="settings">4.3 settings.json → opencode.json <span class="badge effort-med">Medium Effort</span></h3>
-
-<div class="table-wrap">
-<table>
-<thead>
-<tr><th>Claude Code Setting</th><th>OpenCode Config Key</th></tr>
-</thead>
-<tbody>
-<tr><td><code>permissions.allow</code></td><td><code>"permission": { "…": "allow" }</code></td></tr>
-<tr><td><code>permissions.deny</code></td><td><code>"permission": { "…": "deny" }</code></td></tr>
-<tr><td><code>permissions.ask</code></td><td><code>"permission": { "edit": "ask" }</code></td></tr>
-<tr><td><code>permissions.defaultMode</code></td><td>Simpler model: <code>allow</code>, <code>ask</code>, or <code>deny</code> per tool category</td></tr>
-<tr><td><code>model</code></td><td><code>"model": "claude-sonnet-4-6"</code> in opencode.json or per-agent</td></tr>
-<tr><td><code>env</code></td><td>Not directly in config; use <code>{env:VAR}</code> syntax for variable substitution</td></tr>
-<tr><td><code>sandbox</code></td><td>No equivalent — use external containerization (Docker)</td></tr>
-<tr><td><code>autoMemoryEnabled</code></td><td>No equivalent — manual context management</td></tr>
-<tr><td><code>hooks</code></td><td>No equivalent — see <a href="#hooks">hooks section</a></td></tr>
-<tr><td><code>additionalDirectories</code></td><td>No equivalent — launch from project root or configure per-agent</td></tr>
-</tbody>
-</table>
-</div>
-
-<h3 id="memory">4.4 Auto Memory → Manual Context <span class="badge effort-low">Low Effort</span></h3>
-
-<p>Claude Code's auto memory system (<code>~/.claude/projects/&lt;project&gt;/memory/</code>) automatically saves learnings, preferences, and debugging insights across sessions. OpenCode has no equivalent — it relies entirely on instruction files you manage.</p>
-
-<div class="migration-step">
-<h4>Migration Strategy</h4>
-<ol>
-  <li><strong>Export before migration:</strong> Review your project's auto memory at <code>~/.claude/projects/&lt;project&gt;/memory/MEMORY.md</code>. Extract key conventions, build commands, and debugging patterns.</li>
-  <li><strong>Fold into AGENTS.md:</strong> Incorporate the valuable learnings into <code>AGENTS.md</code> or instruction files. These become permanent team knowledge.</li>
-  <li><strong>Maintain proactively:</strong> When the team discovers patterns or conventions, add them to <code>AGENTS.md</code> manually — OpenCode won't do this automatically. Make instruction file updates part of your code review process.</li>
-</ol>
-</div>
-
-
-<!-- ========================================================================== -->
-<!-- 5. SKILLS & COMMANDS -->
-<!-- ========================================================================== -->
-<h2 id="skills">5. Skills &amp; Commands Migration <span class="badge effort-med">Medium Effort</span></h2>
-
-<div class="table-wrap">
-<table>
-<thead>
-<tr><th>Claude Code</th><th>OpenCode</th></tr>
-</thead>
-<tbody>
-<tr>
-<td>
-  <strong>Skills:</strong> <code>.claude/skills/&lt;name&gt;/SKILL.md</code> with YAML frontmatter<br>
-  <strong>Commands:</strong> <code>.claude/commands/&lt;name&gt;.md</code> (flat markdown, merged into skills)<br>
-  <strong>Frontmatter:</strong> <code>description</code>, <code>disable-model-invocation</code>, <code>context: fork</code>, <code>agent</code>, <code>allowed-tools</code>, <code>model</code>, <code>arguments</code>, <code>paths</code>, <code>hooks</code><br>
-  <strong>Invocation:</strong> <code>/skill-name</code> or automatic when Claude matches the description<br>
-  <strong>Dynamic context:</strong> <code>!`command`</code> shell injection pre-processes content before sending to model
-</td>
-<td>
-  <strong>Commands:</strong> <code>.opencode/commands/&lt;name&gt;.md</code> or <code>opencode.json</code> <code>"command"</code> key<br>
-  <strong>Skills:</strong> <code>.opencode/skills/</code> directory<br>
-  <strong>Config:</strong> <code>template</code>, <code>description</code>, <code>agent</code>, <code>model</code><br>
-  <strong>Invocation:</strong> <code>/name</code> with <code>$ARGUMENTS</code> placeholder<br>
-  <strong>No dynamic injection:</strong> templates are static
-</td>
+  </td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<div class="migration-step">
-<h4>Command Migration Example</h4>
+<!-- 1.3 settings.json -->
+<h3 id="settings">1.3 settings.json → opencode.json</h3>
 
-<pre><code># ── Claude Code ──────────────────────────────
-# .claude/commands/deploy.md
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th style="width:28%">Claude Code Setting</th><th style="width:28%">OpenCode Config Key</th><th style="width:44%">Replacement Strategy</th></tr>
+</thead>
+<tbody>
+<tr><td><code>permissions.allow</code></td><td><code>"permission": { "…": "allow" }</code></td><td>Direct mapping — translate allow rules to OpenCode's permission model</td></tr>
+<tr><td><code>permissions.deny</code></td><td><code>"permission": { "…": "deny" }</code></td><td>Direct mapping</td></tr>
+<tr><td><code>permissions.ask</code></td><td><code>"permission": { "edit": "ask" }</code></td><td>OpenCode uses simpler ask/allow/deny per category; no path-based pattern matching</td></tr>
+<tr><td><code>permissions.defaultMode</code></td><td>Simpler model: <code>allow</code>, <code>ask</code>, or <code>deny</code></td><td>No multi-mode system — set a single permission per tool category</td></tr>
+<tr><td><code>model</code></td><td><code>"model": "claude-sonnet-4-6"</code></td><td>Set in <code>opencode.json</code> globally or per-agent. Cannot switch mid-session via slash command</td></tr>
+<tr><td><code>env</code></td><td><code>{env:VAR}</code> syntax for variable substitution</td><td>Not a direct config key — use substitution syntax in config values where needed</td></tr>
+<tr><td><code>sandbox</code></td><td>No equivalent</td><td>Use external containerization: Docker, macOS sandbox profiles, or seccomp</td></tr>
+<tr><td><code>autoMemoryEnabled</code></td><td>No equivalent</td><td>Maintain <code>AGENTS.md</code> manually; make instruction file updates part of code review</td></tr>
+<tr><td><code>hooks</code></td><td>No equivalent</td><td>See <a href="#hooks">Section 4 — Hooks</a> for scenario-by-scenario replacement strategies</td></tr>
+<tr><td><code>additionalDirectories</code></td><td>No equivalent</td><td>Launch OpenCode from project root, or configure per-agent with different contexts</td></tr>
+<tr><td><code>plugins.allow</code> / <code>plugins.deny</code></td><td><code>"plugin": ["pkg"]</code></td><td>Plugins are explicitly listed in config — no allow/deny system needed</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- 1.4 Auto Memory -->
+<h3 id="memory">1.4 Auto Memory → Manual Context</h3>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th style="width:28%">Claude Code</th><th style="width:28%">OpenCode Equivalent</th><th style="width:44%">Replacement Strategy</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td>
+    Claude Code automatically saves learnings, preferences, and debugging insights to <code>~/.claude/projects/&lt;project&gt;/memory/</code>. These accumulate across sessions — Claude "remembers" project conventions and past decisions.
+  </td>
+  <td>
+    <strong>No auto memory.</strong> OpenCode treats each session independently. All project knowledge must live in instruction files and <code>AGENTS.md</code>.
+  </td>
+  <td>
+    <ol style="margin:0;padding-left:18px;">
+      <li><strong>Export before migrating:</strong> Review <code>~/.claude/projects/&lt;project&gt;/memory/MEMORY.md</code> and extract key conventions, build commands, and debugging patterns</li>
+      <li><strong>Fold into AGENTS.md:</strong> Incorporate valuable learnings as permanent team documentation</li>
+      <li><strong>Maintain proactively:</strong> When the team discovers new patterns or conventions, manually add them to <code>AGENTS.md</code>. Make instruction file updates part of your code review process</li>
+    </ol>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<!-- ========================================================================== -->
+<!-- 2. SKILLS & COMMANDS -->
+<!-- ========================================================================== -->
+<h2 id="skills">2. Skills &amp; Commands</h2>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th style="width:28%">Claude Code</th><th style="width:28%">OpenCode Equivalent</th><th style="width:44%">Replacement Strategy</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td>
+    <strong>Skills:</strong> <code>.claude/skills/&lt;name&gt;/SKILL.md</code> with YAML frontmatter<br>
+    <strong>Commands:</strong> <code>.claude/commands/&lt;name&gt;.md</code> (flat markdown, auto-merged into skills)<br>
+    <strong>Auto-invocation:</strong> Claude can automatically load a skill when your task matches its <code>description</code><br>
+    <strong>Dynamic injection:</strong> <code>!`command`</code> shell execution at load time injects output into prompt
+  </td>
+  <td>
+    <strong>Commands:</strong> <code>.opencode/commands/&lt;name&gt;.md</code> or <code>"command"</code> key in <code>opencode.json</code><br>
+    <strong>Skills:</strong> <code>.opencode/skills/</code> directory<br>
+    <strong>Invocation:</strong> <code>/name</code> with <code>$ARGUMENTS</code> placeholder<br>
+    <strong>No auto-invocation, no dynamic injection</strong>
+  </td>
+  <td>
+    <strong>Command migration:</strong>
+    <pre style="margin:6px 0"><code>// Claude Code: .claude/commands/deploy.md
 ---
 description: Deploy the application
 disable-model-invocation: true
 ---
-Deploy the application:
-1. Run tests
-2. Build
-3. Push to $ARGUMENTS
+Deploy: 1. Run tests 2. Build 3. Push to $ARGUMENTS
 
-# ── OpenCode ────────────────────────────────
-# opencode.json
-{
-  "command": {
-    "deploy": {
-      "template": "Deploy the application:\n1. Run tests\n2. Build\n3. Push to $ARGUMENTS",
-      "description": "Deploy the application to a target environment",
-      "agent": "build"
-    }
-  }
-}</code></pre>
-</div>
-
-<div class="migration-step">
-<h4>Skill Frontmatter Mapping</h4>
-
-<div class="table-wrap">
-<table>
-<thead>
-<tr><th>Claude Code Frontmatter</th><th>OpenCode Equivalent</th></tr>
-</thead>
-<tbody>
-<tr><td><code>description</code></td><td><code>"description"</code> in command config</td></tr>
-<tr><td><code>disable-model-invocation</code></td><td>Not needed — OpenCode commands are user-invoked by default; no automatic model invocation</td></tr>
-<tr><td><code>context: fork</code></td><td>Use <code>"agent"</code> field to run in a subagent for isolation</td></tr>
-<tr><td><code>allowed-tools</code></td><td>Configure via <code>"tools"</code> in the agent definition</td></tr>
-<tr><td><code>model</code></td><td><code>"model"</code> in command or agent config</td></tr>
-<tr><td><code>arguments</code></td><td><code>$ARGUMENTS</code>, <code>$0</code>, <code>$1</code> placeholders in the template string</td></tr>
-<tr><td><code>paths</code></td><td>No equivalent — use agent scoping or accept global visibility</td></tr>
-<tr><td>Dynamic injection <code>!`cmd`</code></td><td>No shell-in-template feature — pre-compute context in wrapper scripts</td></tr>
+// OpenCode: opencode.json
+{ "command": { "deploy": {
+  "template": "Deploy:\n1. Run tests\n2. Build\n3. Push to $ARGUMENTS",
+  "description": "Deploy the application to a target environment",
+  "agent": "build"
+} } }</code></pre>
+    <strong>Frontmatter mappings:</strong>
+    <table class="mini-table">
+      <tr><td><code>description</code></td><td>→ <code>"description"</code> in command config</td></tr>
+      <tr><td><code>context: fork</code></td><td>→ Run in a subagent via <code>"agent"</code> field</td></tr>
+      <tr><td><code>allowed-tools</code></td><td>→ <code>"tools"</code> in agent definition</td></tr>
+      <tr><td><code>model</code></td><td>→ <code>"model"</code> in command or agent config</td></tr>
+      <tr><td><code>arguments</code></td><td>→ <code>$ARGUMENTS</code>, <code>$0</code>, <code>$1</code> in template</td></tr>
+      <tr><td><code>paths</code></td><td>→ No equivalent — use agent scoping</td></tr>
+      <tr><td><code>!`cmd`</code> injection</td><td>→ Wrapper scripts that pre-compute context</td></tr>
+    </table>
+  </td>
+</tr>
 </tbody>
 </table>
 </div>
 
 <div class="callout warn">
-  <strong>Gap: No auto-invocation.</strong> Claude Code can automatically load skills when your task matches the skill's description. OpenCode commands are only invoked when you type <code>/name</code>. If you rely on Claude auto-discovering skills (e.g., a skill that teaches API conventions), you'll need to either invoke it manually or include that knowledge in a globally-loaded instruction file instead.
-</div>
+  <strong>No auto-invocation.</strong> Claude Code can automatically load skills when your task matches the skill's description. OpenCode commands must be invoked manually via <code>/name</code>. If you rely on auto-discovered skills, either invoke them manually or include that knowledge in globally-loaded instruction files.
 </div>
 
 
 <!-- ========================================================================== -->
-<!-- 6. HOOKS -->
+<!-- 3. COMMANDS REFERENCE & ADVANCED FEATURES -->
 <!-- ========================================================================== -->
-<h2 id="hooks">6. Hooks → OpenCode Equivalents <span class="badge effort-high">High Effort</span></h2>
+<h2 id="commands">3. Commands Reference &amp; Advanced Features</h2>
 
-<p>This is the largest migration gap. Claude Code's hook system provides 24+ lifecycle events with five hook types (command, HTTP, MCP tool, LLM prompt, subagent). OpenCode has no equivalent hook infrastructure.</p>
+<!-- 3.1 Slash Commands -->
+<h3 id="slash-commands">3.1 Slash Commands Mapping</h3>
 
-<div class="migration-step">
-<h4>Common Hook Scenarios &amp; Replacement Strategies</h4>
+<p>Every Claude Code built-in slash command and its OpenCode counterpart.</p>
 
 <div class="table-wrap">
 <table>
 <thead>
-<tr><th style="width:22%">Use Case</th><th style="width:35%">Claude Code Hook</th><th style="width:43%">OpenCode Replacement</th></tr>
+<tr><th style="width:25%">Claude Code Command</th><th style="width:25%">OpenCode Equivalent</th><th style="width:50%">Replacement Strategy</th></tr>
 </thead>
 <tbody>
 <tr>
-  <td><strong>Lint after edits</strong></td>
-  <td><code>PostToolUse</code> on Write/Edit → runs ESLint, Prettier</td>
+  <td><code>/help</code></td>
+  <td><code>/help</code></td>
+  <td>Both show available commands. OpenCode's help is context-sensitive based on your config.</td>
+</tr>
+<tr>
+  <td><code>/clear</code></td>
+  <td>Start new session</td>
+  <td>OpenCode has no in-session clear. Press <code>Ctrl+C</code> to interrupt, then start a fresh session from the TUI session list.</td>
+</tr>
+<tr>
+  <td><code>/model</code></td>
+  <td>Edit <code>opencode.json</code> or <code>/connect</code></td>
+  <td>No mid-session model switching. Set <code>"model"</code> in config or per-agent. Changing the default agent's model requires editing config and restarting.</td>
+</tr>
+<tr>
+  <td><code>/plan</code></td>
+  <td><code>Tab</code> key</td>
+  <td>Claude Code uses <code>Shift+Tab</code> or <code>/plan</code>. OpenCode toggles plan/build mode with the <code>Tab</code> key in TUI.</td>
+</tr>
+<tr>
+  <td><code>/init</code></td>
+  <td><code>/init</code></td>
+  <td>Claude Code generates <code>CLAUDE.md</code>; OpenCode generates <code>AGENTS.md</code>. OpenCode also reads existing CLAUDE.md, .cursorrules, and .windsurfrules to bootstrap.</td>
+</tr>
+<tr>
+  <td><code>/login</code></td>
+  <td><code>/connect</code></td>
+  <td>Claude Code logs into Anthropic. OpenCode connects to 75+ providers — select one and enter API credentials.</td>
+</tr>
+<tr>
+  <td><code>/plugin</code></td>
+  <td>Edit <code>opencode.json</code> <code>"plugin"</code> array</td>
+  <td>Claude Code has <code>/plugin install|uninstall|list</code>. OpenCode loads plugins from <code>.opencode/plugins/</code> or npm packages listed in config — no interactive install command.</td>
+</tr>
+<tr>
+  <td><code>/memory</code></td>
+  <td>No equivalent</td>
+  <td>Claude Code opens the auto-memory editor. OpenCode has no auto-memory — maintain <code>AGENTS.md</code> manually.</td>
+</tr>
+<tr>
+  <td><code>/compact</code></td>
+  <td>Automatic</td>
+  <td>Claude Code triggers context compaction manually. OpenCode manages context windows automatically — no manual trigger needed or available.</td>
+</tr>
+<tr>
+  <td><code>/review</code></td>
+  <td>Natural language: "review this PR"</td>
+  <td>Claude Code's <code>/review</code> triggers the code-review skill. In OpenCode, describe what you want reviewed in natural language.</td>
+</tr>
+<tr>
+  <td><code>/security-review</code></td>
+  <td>Natural language or custom command</td>
+  <td>Ask the agent to "do a security review" or create a custom <code>/security-review</code> command in <code>.opencode/commands/</code>.</td>
+</tr>
+<tr>
+  <td><code>/export</code></td>
+  <td><code>/share</code></td>
+  <td>Claude Code exports the conversation. OpenCode's <code>/share</code> uploads the session and copies a shareable link (can be disabled).</td>
+</tr>
+<tr>
+  <td><code>/resume</code></td>
+  <td>TUI session list</td>
+  <td>OpenCode displays previous sessions in the TUI. Select one to resume — no slash command needed.</td>
+</tr>
+<tr>
+  <td><code>/cost</code></td>
+  <td>Provider-dependent</td>
+  <td>Cost visibility depends on the provider — Anthropic and OpenAI show usage; local models cost $0.</td>
+</tr>
+<tr>
+  <td><code>/doctor</code></td>
+  <td>No equivalent</td>
+  <td>Manually check: Node.js version, provider connectivity, and config file validity.</td>
+</tr>
+<tr>
+  <td><code>/status</code></td>
+  <td>No equivalent</td>
+  <td>Check the TUI header for current model and agent in OpenCode.</td>
+</tr>
+<tr>
+  <td><code>/stats</code></td>
+  <td>No equivalent</td>
+  <td>Track usage externally via provider dashboards.</td>
+</tr>
+<tr>
+  <td><code>/config</code></td>
+  <td>Edit <code>opencode.json</code> directly</td>
+  <td>Claude Code opens settings in an editor. OpenCode has no config command — edit files manually.</td>
+</tr>
+<tr>
+  <td><code>/agents</code></td>
+  <td>Agent config in <code>opencode.json</code></td>
+  <td>Agents are defined in config and listed in the TUI agent picker.</td>
+</tr>
+<tr>
+  <td><code>/permissions</code></td>
+  <td>Edit <code>opencode.json</code> <code>"permission"</code> key</td>
+  <td>Both tools configure permissions through config files. No interactive permission editor in OpenCode.</td>
+</tr>
+<tr>
+  <td><code>/context</code></td>
+  <td>No equivalent</td>
+  <td>Check the <code>"instructions"</code> array in <code>opencode.json</code> to see what's loaded.</td>
+</tr>
+<tr>
+  <td><code>/ide</code></td>
+  <td>IDE extension</td>
+  <td>Claude Code attaches to VS Code / JetBrains. OpenCode offers its own IDE extension.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout tip">
+  <strong>Custom commands:</strong> Recreate any missing Claude Code slash command as an OpenCode custom command in <code>.opencode/commands/&lt;name&gt;.md</code> or via the <code>"command"</code> key in <code>opencode.json</code>, using <code>$ARGUMENTS</code> for dynamic input.
+</div>
+
+<!-- 3.2 AgentTeam, UltraThink & Other Features -->
+<h3 id="advanced-features">3.2 AgentTeam, UltraThink &amp; Other Advanced Features</h3>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th style="width:22%">Claude Code Feature</th><th style="width:18%">OpenCode Status</th><th style="width:60%">Replacement Strategy</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>AgentTeam</strong></td>
+  <td class="gap-unavailable">Not available</td>
   <td>
-    OpenCode <strong>formatters</strong> provide the closest equivalent:<br>
-    <code>"formatter": { "prettier": { "extensions": [".ts"] } }</code><br>
-    Or a custom formatter: <code>"custom": { "command": ["npx", "eslint", "--fix", "$FILE"] }</code><br>
-    Supplement with pre-commit hooks (husky, lefthook)
+    <p>Claude Code's AgentTeam (experimental) launches multiple subagents in parallel, coordinates them via a shared task list, and merges results. Agents can spawn other agents and delegate subtasks.</p>
+    <p><strong>Workarounds:</strong></p>
+    <ul style="margin:4px 0 0;padding-left:18px;">
+      <li>Run multiple OpenCode sessions in separate terminals with different agent configs</li>
+      <li>Use a shared task file (markdown checklist) for coordination between sessions</li>
+      <li>Orchestrate via Makefile, CI pipeline DAG, or custom scripts</li>
+      <li>For complex multi-agent workflows, consider LangChain or CrewAI as an external orchestration layer</li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td><strong>UltraThink</strong></td>
+  <td class="gap-partial">Partial</td>
+  <td>
+    <p>Claude Code's UltraThink mode enables extended reasoning with higher thinking token budgets. The model spends more time analyzing before responding.</p>
+    <p><strong>OpenCode approach:</strong> Use models that support extended thinking — Claude Opus 4.7 via Anthropic provider, or OpenAI o-series models. Configure a dedicated agent:</p>
+    <pre style="margin:6px 0 0"><code>{
+  "agent": {
+    "deep-thinker": {
+      "model": "claude-opus-4-7",
+      "description": "Extended reasoning for complex problems",
+      "prompt": "{file:./opencode/agents/deep-thinker-prompt.md}"
+    }
+  }
+}</code></pre>
+    <p style="margin:6px 0 0">Not all providers expose thinking budget controls. Claude models via Anthropic and OpenAI o-series are your best options.</p>
+  </td>
+</tr>
+<tr>
+  <td><strong>Plan Mode</strong></td>
+  <td class="gap-available">Available</td>
+  <td>Claude Code uses <code>Shift+Tab</code> / <code>/plan</code>. OpenCode toggles plan/build mode with <code>Tab</code>. Functionally identical.</td>
+</tr>
+<tr>
+  <td><strong>Context: fork</strong></td>
+  <td class="gap-available">Available</td>
+  <td>Claude Code skills can run in an isolated forked context. OpenCode achieves the same via subagents — each gets a clean context and returns results to the main session.</td>
+</tr>
+<tr>
+  <td><strong>Dynamic injection (<code>!`cmd`</code>)</strong></td>
+  <td class="gap-unavailable">Not available</td>
+  <td>
+    <p>Claude Code executes shell commands at skill-load time and injects the output into the prompt.</p>
+    <p><strong>Workaround:</strong> Create a wrapper script that pre-computes context, then reference it:</p>
+    <pre style="margin:6px 0 0"><code>#!/bin/bash
+git log --oneline -20 > /tmp/recent-commits.txt
+opencode -p "Review: {file:/tmp/recent-commits.txt}"</code></pre>
+  </td>
+</tr>
+<tr>
+  <td><strong>Subagent delegation</strong></td>
+  <td class="gap-available">Available</td>
+  <td>Both tools let the main agent spawn subagents. Claude Code has built-in Explore and Plan agents; OpenCode requires custom agents with tool restrictions (e.g., <code>"write": false, "bash": false</code> for Explore-like).</td>
+</tr>
+<tr>
+  <td><strong>Context compaction</strong></td>
+  <td class="gap-available">Automatic</td>
+  <td>Claude Code offers manual (<code>/compact</code>) and automatic compaction. OpenCode handles it internally — no user control, but also no need to manage it.</td>
+</tr>
+<tr>
+  <td><strong>Auto memory</strong></td>
+  <td class="gap-unavailable">Not available</td>
+  <td>Claude Code persists learnings across sessions. OpenCode treats each session independently — add conventions to <code>AGENTS.md</code> manually.</td>
+</tr>
+<tr>
+  <td><strong>Terminal sandbox</strong></td>
+  <td class="gap-unavailable">Not available</td>
+  <td>Claude Code sandboxes Bash at the OS level (macOS Seatbelt, Linux landlock/seccomp). OpenCode has no sandbox — use Docker, VMs, or macOS sandbox profiles externally.</td>
+</tr>
+<tr>
+  <td><strong>Multi-model routing</strong></td>
+  <td class="gap-available">Available</td>
+  <td>Claude Code routes tasks to different Claude models. OpenCode does this natively per-agent — set <code>"model"</code> on each agent. Plus you can mix providers (Haiku via Anthropic, Opus via Bedrock).</td>
+</tr>
+<tr>
+  <td><strong>Prompt caching</strong></td>
+  <td class="gap-partial">Provider-dependent</td>
+  <td>Claude Code uses Anthropic's prompt caching. In OpenCode, caching depends on the provider — Anthropic models support it; other providers vary.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+  <strong>AgentTeam is the biggest architectural gap.</strong> If your workflow depends on coordinated multi-agent work (parallel agents sharing a task list, spawning sub-agents, merging results), there is no direct substitute in OpenCode. Evaluate whether you can break the workflow into sequential steps, run sessions in parallel manually, or use an external orchestration framework.
+</div>
+
+
+<!-- ========================================================================== -->
+<!-- 4. HOOKS -->
+<!-- ========================================================================== -->
+<h2 id="hooks">4. Hooks → OpenCode Equivalents</h2>
+
+<p>Claude Code has 24+ lifecycle events with five hook types (command, HTTP, MCP tool, LLM prompt, subagent). OpenCode has no hook infrastructure — but many hook use cases have practical replacements.</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th style="width:20%">Hook Use Case</th><th style="width:26%">Claude Code Hook</th><th style="width:54%">Replacement Strategy</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Lint / format after edits</strong></td>
+  <td><code>PostToolUse</code> on Write/Edit runs ESLint, Prettier</td>
+  <td>
+    OpenCode <strong>formatters</strong>:
+    <pre style="margin:6px 0"><code>{
+  "formatter": {
+    "prettier": { "extensions": [".js", ".ts", ".tsx"] },
+    "eslint-fix": {
+      "command": ["npx", "eslint", "--fix", "$FILE"],
+      "extensions": [".js", ".ts", ".tsx"]
+    }
+  }
+}</code></pre>
+    Supplement with pre-commit hooks (husky, lefthook). <code>$FILE</code> is replaced with the target file path at runtime.
   </td>
 </tr>
 <tr>
   <td><strong>Block dangerous commands</strong></td>
-  <td><code>PreToolUse</code> hook exits 2 for <code>rm -rf</code></td>
+  <td><code>PreToolUse</code> exits 2 for <code>rm -rf</code>, <code>sudo</code>, etc.</td>
   <td>
-    Permission deny patterns: <code>"rm -rf *": "deny"</code><br>
+    Permission deny patterns: <code>"permission": { "rm *": "deny", "sudo *": "deny" }</code><br>
     System-level: restricted sudo, shell aliases, Docker seccomp profiles
   </td>
 </tr>
 <tr>
   <td><strong>Session start setup</strong></td>
   <td><code>SessionStart</code> sets env vars, warms caches, checks deps</td>
-  <td>Wrapper script (bash/zsh) that runs setup before launching <code>opencode</code></td>
+  <td>Wrapper script that runs pre-flight checks before launching <code>opencode</code></td>
 </tr>
 <tr>
   <td><strong>Desktop notifications</strong></td>
-  <td><code>Notification</code> on idle/auth/permission events</td>
-  <td>External notification tooling: <code>terminal-notifier</code>, tmux hooks, osascript</td>
+  <td><code>Notification</code> on idle, auth, permission events</td>
+  <td>External tools: <code>terminal-notifier</code> (macOS), <code>notify-send</code> (Linux), tmux hooks</td>
 </tr>
 <tr>
   <td><strong>Prompt validation</strong></td>
-  <td><code>UserPromptSubmit</code> can block prompts matching patterns</td>
+  <td><code>UserPromptSubmit</code> blocks prompts matching patterns</td>
   <td>No direct equivalent — rely on team conventions and code review</td>
 </tr>
 <tr>
   <td><strong>Post-edit context injection</strong></td>
-  <td><code>PostToolUse</code> with <code>additionalContext</code> returns guidance</td>
-  <td>No equivalent — OpenCode doesn't support runtime context injection. Redesign the workflow</td>
+  <td><code>PostToolUse</code> with <code>additionalContext</code></td>
+  <td>No equivalent — OpenCode doesn't support runtime context injection. Redesign the workflow or use external file watchers</td>
 </tr>
 <tr>
-  <td><strong>Auto-commit</strong></td>
+  <td><strong>Auto-commit on change</strong></td>
   <td><code>PostToolUse</code> runs <code>git add</code> + <code>git commit</code></td>
-  <td>External file watcher (e.g., <code>watchexec</code>) or periodic cron</td>
+  <td>External file watcher (<code>watchexec</code>) or periodic cron job</td>
 </tr>
 <tr>
   <td><strong>Config change detection</strong></td>
-  <td><code>ConfigChange</code> reloads config on file change</td>
-  <td>OpenCode watches <code>opencode.json</code> natively; restart for other files</td>
+  <td><code>ConfigChange</code> reloads on file change</td>
+  <td>OpenCode watches <code>opencode.json</code> natively; restart for other config files</td>
 </tr>
 </tbody>
 </table>
 </div>
-</div>
-
-<div class="migration-step">
-<h4>Formatters: The Closest Built-in Alternative</h4>
-<p>OpenCode's formatter system covers the most common hook use case — auto-formatting and linting on file save:</p>
-
-<pre><code>// opencode.json
-{
-  "formatter": {
-    "prettier": {
-      "extensions": [".js", ".ts", ".jsx", ".tsx", ".json", ".md"]
-    },
-    "eslint-fix": {
-      "command": ["npx", "eslint", "--fix", "$FILE"],
-      "extensions": [".js", ".ts", ".jsx", ".tsx"],
-      "environment": { "NODE_ENV": "development" }
-    }
-  }
-}</code></pre>
 
 <div class="callout info">
-  <strong><code>$FILE</code> substitution:</strong> OpenCode replaces <code>$FILE</code> with the target file path before running the formatter command. Formatters run when a file is written within the session.
-</div>
+  <strong>Formatters are the closest built-in alternative.</strong> They cover the most common hook use case — auto-formatting and linting when files are written. For everything else, you'll need external tooling.
 </div>
 
 
 <!-- ========================================================================== -->
-<!-- 7. PLUGINS -->
+<!-- 5. PLUGINS -->
 <!-- ========================================================================== -->
-<h2 id="plugins">7. Plugins Migration <span class="badge effort-high">High Effort</span></h2>
+<h2 id="plugins">5. Plugins</h2>
 
 <div class="table-wrap">
 <table>
 <thead>
-<tr><th>Aspect</th><th>Claude Code</th><th>OpenCode</th></tr>
+<tr><th style="width:22%">Aspect</th><th style="width:24%">Claude Code</th><th style="width:24%">OpenCode Equivalent</th><th style="width:30%">Replacement Strategy</th></tr>
 </thead>
 <tbody>
-<tr><td><strong>Manifest</strong></td><td><code>.claude-plugin/plugin.json</code> — name, version, author</td><td>npm <code>package.json</code> or direct file placement</td></tr>
-<tr><td><strong>Distribution</strong></td><td>Marketplace (official + community), git repo, zip archive</td><td>npm registry (public or private), git repo, direct file placement</td></tr>
-<tr><td><strong>Loading</strong></td><td><code>/plugin install name@marketplace</code>, <code>--plugin-dir</code>, <code>--plugin-url</code></td><td>Place in <code>.opencode/plugins/</code> or add npm package to <code>"plugin": ["pkg"]</code> in config</td></tr>
-<tr><td><strong>Components</strong></td><td>Skills, agents, hooks, MCP, LSP, monitors, settings, bin/</td><td>Skills, agents, commands, tools, MCP</td></tr>
-<tr><td><strong>Namespacing</strong></td><td><code>/plugin-name:skill-name</code> — automatic collision prevention</td><td>No namespace system — command names must be globally unique</td></tr>
+<tr>
+  <td><strong>Manifest</strong></td>
+  <td><code>.claude-plugin/plugin.json</code> — name, version, author</td>
+  <td>npm <code>package.json</code> or direct file placement in <code>.opencode/plugins/</code></td>
+  <td>Package plugins as npm modules for versioning and distribution</td>
+</tr>
+<tr>
+  <td><strong>Distribution</strong></td>
+  <td>Marketplace (official + community), git repo, zip</td>
+  <td>npm registry (public or private), git repo, direct file placement</td>
+  <td>Publish to npm or share via git. Reference in <code>opencode.json</code>: <code>"plugin": ["@org/package"]</code></td>
+</tr>
+<tr>
+  <td><strong>Loading</strong></td>
+  <td><code>/plugin install name@marketplace</code>, <code>--plugin-dir</code></td>
+  <td>Place in <code>.opencode/plugins/</code> or add npm package to <code>"plugin": ["pkg"]</code></td>
+  <td>No interactive install — plugins are configured declaratively</td>
+</tr>
+<tr>
+  <td><strong>Components</strong></td>
+  <td>Skills, agents, hooks, MCP, LSP, monitors, settings, bin/</td>
+  <td>Skills, agents, commands, tools, MCP</td>
+  <td>Hooks and monitors have no equivalent — replace with external tooling. LSP is built into OpenCode</td>
+</tr>
+<tr>
+  <td><strong>Namespacing</strong></td>
+  <td><code>/plugin-name:skill-name</code> — automatic collision prevention</td>
+  <td>No namespace system — command names must be globally unique</td>
+  <td>Use unique command name prefixes (e.g., <code>/myplugin-do-thing</code>). Document naming conventions</td>
+</tr>
+<tr>
+  <td><strong>Marketplace</strong></td>
+  <td>Centralized discovery and one-click install</td>
+  <td>No centralized marketplace</td>
+  <td>Distribute via npm; document available plugins in team wiki or README</td>
+</tr>
 </tbody>
 </table>
 </div>
-
-<div class="migration-step">
-<h4>Conversion Steps</h4>
-
-<ol>
-  <li><strong>Skills &amp; Commands:</strong> Move from <code>skills/&lt;name&gt;/SKILL.md</code> to <code>.opencode/commands/&lt;name&gt;.md</code> or <code>.opencode/skills/&lt;name&gt;/</code>. Convert YAML frontmatter to OpenCode command config fields.</li>
-  <li><strong>Agents:</strong> Convert Claude Code subagent definitions (<code>.claude/agents/</code>) to OpenCode agent configs in <code>.opencode/agents/</code> or the <code>"agent"</code> key in <code>opencode.json</code>.</li>
-  <li><strong>Hooks:</strong> Replace hook-based automation with formatters, external watchers, and pre-commit hooks. See <a href="#hooks">hooks section</a> for scenario-by-scenario guidance.</li>
-  <li><strong>MCP servers:</strong> Transfer from <code>.mcp.json</code> to the <code>"mcp"</code> config key in <code>opencode.json</code>. Auth methods may need adjustment.</li>
-  <li><strong>LSP:</strong> Convert <code>.lsp.json</code> config to OpenCode's <code>"lsp"</code> key.</li>
-  <li><strong>Monitors:</strong> No equivalent — replace with external monitoring (<code>watchexec</code>, <code>fswatch</code>, tmux status bars).</li>
-  <li><strong>Ship it:</strong> Publish as an npm package or share via git with setup instructions. Reference in team <code>opencode.json</code>: <code>"plugin": ["@your-org/opencode-frontend-tools"]</code>.</li>
-</ol>
 
 <div class="callout tip">
-  <strong>npm-based distribution:</strong> OpenCode can load plugins directly from npm — a capability Claude Code doesn't have natively. If your team already uses npm for package management, plugin distribution integrates with your existing workflow.
-</div>
+  <strong>npm-based distribution advantage:</strong> OpenCode can load plugins directly from npm — if your team already uses npm for package management, plugin distribution integrates with your existing workflow. Claude Code has no native npm plugin support.
 </div>
 
 
 <!-- ========================================================================== -->
-<!-- 8. MCP SERVERS -->
+<!-- 6. MCP SERVERS -->
 <!-- ========================================================================== -->
-<h2 id="mcp">8. MCP Server Migration <span class="badge effort-low">Low Effort</span></h2>
+<h2 id="mcp">6. MCP Servers</h2>
 
-<p>Both tools support the Model Context Protocol, making this one of the easiest migrations. The configuration syntax differs slightly, but the servers themselves work identically.</p>
+<p>Both tools support the Model Context Protocol. The servers themselves work identically — only configuration syntax differs.</p>
 
 <div class="table-wrap">
 <table>
 <thead>
-<tr><th>Aspect</th><th>Claude Code</th><th>OpenCode</th></tr>
+<tr><th style="width:20%">Aspect</th><th style="width:24%">Claude Code</th><th style="width:24%">OpenCode Equivalent</th><th style="width:32%">Replacement Strategy</th></tr>
 </thead>
 <tbody>
-<tr><td><strong>Config location</strong></td><td><code>.mcp.json</code>, <code>~/.claude.json</code></td><td><code>"mcp"</code> key in <code>opencode.json</code></td></tr>
-<tr><td><strong>Transport types</strong></td><td>HTTP (streamable-http), SSE (deprecated), stdio</td><td>remote (HTTP with URL), stdio</td></tr>
-<tr><td><strong>OAuth 2.0</strong></td><td>Full OAuth with keychain storage, dynamic client registration</td><td>Not documented — use API-key-based auth where available</td></tr>
-<tr><td><strong>Tool search</strong></td><td>Deferred loading via <code>tool_reference</code> blocks</td><td>Not documented — all tools likely loaded upfront</td></tr>
-<tr><td><strong>Channels</strong></td><td>MCP servers push messages into sessions</td><td>Not documented</td></tr>
-<tr><td><strong>Elicitation</strong></td><td>MCP servers request user input mid-task via dialogs</td><td>Not documented</td></tr>
+<tr>
+  <td><strong>Config location</strong></td>
+  <td><code>.mcp.json</code>, <code>~/.claude.json</code></td>
+  <td><code>"mcp"</code> key in <code>opencode.json</code></td>
+  <td>Translate config syntax (see example below)</td>
+</tr>
+<tr>
+  <td><strong>Transport: HTTP</strong></td>
+  <td><code>type: "http"</code> (streamable-http)</td>
+  <td><code>type: "remote"</code> with URL</td>
+  <td>Rename type and move URL field</td>
+</tr>
+<tr>
+  <td><strong>Transport: stdio</strong></td>
+  <td><code>type: "stdio"</code></td>
+  <td><code>type: "stdio"</code></td>
+  <td>Identical — command and args map directly</td>
+</tr>
+<tr>
+  <td><strong>Transport: SSE</strong></td>
+  <td>Deprecated in Claude Code</td>
+  <td>Not documented</td>
+  <td>Migrate to HTTP (remote) transport before switching</td>
+</tr>
+<tr>
+  <td><strong>OAuth 2.0</strong></td>
+  <td>Full OAuth with keychain storage, DCR</td>
+  <td>Not documented</td>
+  <td>Use API-key-based MCP servers. For OAuth-only servers, deploy an authentication proxy</td>
+</tr>
+<tr>
+  <td><strong>Tool search</strong></td>
+  <td>Deferred loading via <code>tool_reference</code> blocks</td>
+  <td>Not documented</td>
+  <td>Connect fewer MCP servers per session; be selective about exposed tools</td>
+</tr>
+<tr>
+  <td><strong>Channels</strong></td>
+  <td>MCP servers push messages into sessions</td>
+  <td>Not documented</td>
+  <td>Poll-based MCP tool invocation; external webhook handlers for push events</td>
+</tr>
+<tr>
+  <td><strong>Elicitation</strong></td>
+  <td>MCP servers request user input mid-task</td>
+  <td>Not documented</td>
+  <td>Use inline prompts in session; pre-configure MCP tool inputs</td>
+</tr>
 </tbody>
 </table>
 </div>
 
-<div class="migration-step">
-<h4>Config Translation</h4>
-
-<pre><code>// Claude Code: .mcp.json
+<div class="subsection">
+  <h4>Config Translation Example</h4>
+  <pre><code>// Claude Code: .mcp.json
 {
   "mcpServers": {
     "github": {
@@ -1024,8 +839,7 @@ Deploy the application:
     "local-db": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "@bytebase/dbhub", "--dsn", "postgresql://..."],
-      "env": { "NODE_ENV": "production" }
+      "args": ["-y", "@bytebase/dbhub", "--dsn", "postgresql://..."]
     }
   }
 }
@@ -1048,819 +862,221 @@ Deploy the application:
 </div>
 
 <div class="callout warn">
-  <strong>Auth migration:</strong> If your team uses OAuth-authenticated MCP servers (Sentry, Notion, Slack via MCP), check whether those servers offer API-key-based authentication as an alternative. OpenCode doesn't document MCP OAuth support. For servers that only support OAuth, you may need an authentication proxy.
+  <strong>OAuth gap:</strong> If your team uses OAuth-authenticated MCP servers (Sentry, Notion, Slack via MCP), verify whether those servers offer API-key authentication as a fallback. OpenCode does not document MCP OAuth support.
 </div>
 
 
 <!-- ========================================================================== -->
-<!-- 9. PERMISSIONS -->
+<!-- 7. SUBAGENTS & AGENT TEAMS -->
 <!-- ========================================================================== -->
-<h2 id="permissions">9. Permissions Migration <span class="badge effort-low">Low Effort</span></h2>
-
-<p>OpenCode's permissions are simpler and less granular than Claude Code's. The default is permissive (allow all), whereas Claude Code defaults to prompting for writes and Bash.</p>
+<h2 id="subagents">7. Subagents &amp; Agent Teams</h2>
 
 <div class="table-wrap">
 <table>
 <thead>
-<tr><th>Claude Code</th><th>OpenCode</th></tr>
+<tr><th style="width:28%">Claude Code</th><th style="width:28%">OpenCode Equivalent</th><th style="width:44%">Replacement Strategy</th></tr>
 </thead>
 <tbody>
 <tr>
-<td>
-  <strong>Syntax:</strong> <code>Tool(pattern)</code> with deny→ask→allow precedence<br>
-  <strong>Modes:</strong> default, acceptEdits, plan, auto, dontAsk, bypassPermissions<br>
-  <strong>Granularity:</strong> Per-tool, per-path (gitignore patterns), per-command (Bash), per-domain (WebFetch), per-MCP-tool<br>
-  <strong>Scopes:</strong> User, project, local, managed policy
-</td>
-<td>
-  <strong>Syntax:</strong> <code>"permission": { "edit": "ask" }</code> with wildcard patterns<br>
-  <strong>Values:</strong> <code>allow</code>, <code>ask</code>, <code>deny</code><br>
-  <strong>Granularity:</strong> Per-category (edit, bash) with command-level wildcards<br>
-  <strong>Defaults:</strong> Allows all operations without approval
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<div class="migration-step">
-<h4>Translation Example</h4>
-
-<pre><code>// Claude Code: .claude/settings.json
-{
-  "permissions": {
-    "allow": [
-      "Bash(npm *)",
-      "Bash(git *)",
-      "Read(/src/**)"
-    ],
-    "deny": [
-      "Bash(rm *)",
-      "Read(.env)",
-      "Edit(//etc/**)"
-    ],
-    "defaultMode": "default"
-  }
-}
-
-// OpenCode: opencode.json
-{
-  "permission": {
-    "edit": "ask",
-    "bash": "ask",
-    "npm *": "allow",
-    "git *": "allow",
-    "rm *": "deny"
-  }
-}</code></pre>
-</div>
-
-<div class="callout warn">
-  <strong>Missing granularity:</strong> Claude Code's path-based Read/Edit deny rules (using gitignore patterns like <code>Read(/src/**)</code>) have no equivalent in OpenCode. Per-MCP-tool permissions and WebFetch domain rules also don't map. For strong file-level access control, consider OS-level permissions or containerization.
-</div>
-
-
-<!-- ========================================================================== -->
-<!-- 10. SUBAGENTS & AGENT TEAMS -->
-<!-- ========================================================================== -->
-<h2 id="subagents">10. Subagents &amp; Agent Teams Migration <span class="badge effort-med">Medium Effort</span></h2>
-
-<div class="table-wrap">
-<table>
-<thead>
-<tr><th>Claude Code</th><th>OpenCode</th></tr>
-</thead>
-<tbody>
-<tr>
-<td>
-  <strong>Built-in:</strong> Explore (read-only research), Plan (architecture), general-purpose<br>
-  <strong>Custom:</strong> <code>.claude/agents/&lt;name&gt;.md</code> with tool restrictions, skills, model<br>
-  <strong>Agent Teams:</strong> Experimental multi-session coordination with shared task lists
-</td>
-<td>
-  <strong>Custom:</strong> <code>.opencode/agents/&lt;name&gt;.md</code> or <code>"agent"</code> key in <code>opencode.json</code><br>
-  <strong>Config:</strong> <code>description</code>, <code>model</code>, <code>prompt</code>, <code>"tools": {"write": false, ...}</code><br>
-  <strong>Default agent:</strong> <code>"default_agent"</code> config key (must be a primary agent, not a subagent)<br>
-  <strong>No agent teams equivalent</strong>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<div class="migration-step">
-<h4>Agent Definition Translation</h4>
-
-<pre><code># Claude Code: .claude/agents/security-reviewer.md
+  <td>
+    <strong>Built-in agents:</strong> Explore (read-only research), Plan (architecture design), general-purpose<br>
+    <strong>Custom agents:</strong> <code>.claude/agents/&lt;name&gt;.md</code> with tool restrictions, skills, model<br>
+    <strong>Agent Teams:</strong> Experimental multi-session coordination with shared task lists — agents spawn sub-agents and delegate work
+  </td>
+  <td>
+    <strong>Custom agents:</strong> <code>.opencode/agents/&lt;name&gt;.md</code> or <code>"agent"</code> key in <code>opencode.json</code><br>
+    <strong>Config:</strong> <code>description</code>, <code>model</code>, <code>prompt</code>, <code>"tools": {"write": false, ...}</code><br>
+    <strong>No built-in Explore or Plan agents, no Agent Teams</strong>
+  </td>
+  <td>
+    <strong>Agent definition translation:</strong>
+    <pre style="margin:6px 0"><code># Claude Code: .claude/agents/security-reviewer.md
 ---
 name: security-reviewer
-description: Reviews code for security vulnerabilities
+description: Reviews code for OWASP Top 10 vulnerabilities
 tools: Read, Grep, Glob
 model: claude-sonnet-4-6
 ---
-You are a security reviewer. Check for OWASP Top 10 vulnerabilities...
+You are a security reviewer...
 
 // OpenCode: opencode.json
 {
   "agent": {
     "security-reviewer": {
-      "description": "Reviews code for security vulnerabilities — OWASP Top 10",
+      "description": "Reviews code for OWASP Top 10",
       "model": "claude-sonnet-4-6",
-      "prompt": "{file:./opencode/agents/security-reviewer-prompt.md}",
-      "tools": {
-        "write": false,
-        "edit": false,
-        "bash": false
-      }
+      "prompt": "{file:./opencode/agents/security-reviewer.md}",
+      "tools": { "write": false, "edit": false, "bash": false }
     }
   }
 }</code></pre>
-</div>
-
-<div class="callout danger">
-  <strong>No built-in Explore or Plan agents.</strong> Claude Code's Explore agent has an optimized system prompt for read-only codebase exploration, and the Plan agent is tuned for architectural reasoning. OpenCode has no equivalents. You'll need to create custom agents that replicate this behavior by restricting tools (<code>"write": false, "bash": false</code> for Explore-like) and writing appropriate system prompts. Agent teams — the experimental multi-session coordination feature — have no migration path.
-</div>
-
-
-<!-- ========================================================================== -->
-<!-- 11. MODEL & PROVIDER -->
-<!-- ========================================================================== -->
-<h2 id="providers">11. Model &amp; Provider Migration <span class="badge effort-low">Low Effort</span></h2>
-
-<p>This is OpenCode's biggest advantage. Claude Code works exclusively with Claude models (via Anthropic API, Bedrock, or Vertex). OpenCode supports 75+ providers — including Anthropic, so you can continue using Claude models if desired.</p>
-
-<div class="table-wrap">
-<table>
-<thead>
-<tr><th>Your Current Setup</th><th>OpenCode Migration Path</th></tr>
-</thead>
-<tbody>
-<tr>
-  <td>Claude Pro/Max subscription</td>
-  <td>Use Anthropic provider via OAuth or API key. Alternatively, OpenCode Zen (curated verified models) or Go (low-cost subscription)</td>
-</tr>
-<tr>
-  <td>Anthropic API (Console)</td>
-  <td>Same API key with Anthropic provider in <code>/connect</code>. No changes needed</td>
-</tr>
-<tr>
-  <td>AWS Bedrock</td>
-  <td>Configure Bedrock provider: IAM credentials, AWS profile, or bearer token. Supports VPC endpoints and EKS IRSA</td>
-</tr>
-<tr>
-  <td>Google Vertex AI</td>
-  <td>Configure Vertex provider: <code>GOOGLE_CLOUD_PROJECT</code>, credentials. Use <code>global</code> region for best availability</td>
-</tr>
-<tr>
-  <td>Want to try other models</td>
-  <td>75+ providers unlockable: OpenAI, Groq, DeepSeek, xAI, Ollama (local), LM Studio (local), OpenRouter, GitHub Copilot, GitLab Duo, and many more</td>
+    <strong>Recreating Explore-like agents:</strong> Create a custom agent with <code>"write": false, "bash": false</code> and an appropriate research-oriented system prompt.<br>
+    <strong>Agent teams workaround:</strong> Run independent OpenCode sessions in parallel; use a shared markdown task file for coordination. For complex multi-agent workflows, consider external orchestration (LangChain, CrewAI, CI pipeline DAGs).
+  </td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<div class="callout tip">
-  <strong>OpenCode Zen</strong> provides a curated list of models tested and verified by the OpenCode team — a good starting point if you want pre-vetted models without evaluating 75+ providers yourself.
-</div>
-
 
 <!-- ========================================================================== -->
-<!-- 12. CI/CD & AUTOMATION -->
+<!-- 8. FEATURE GAP ANALYSIS -->
 <!-- ========================================================================== -->
-<h2 id="cicd">12. CI/CD &amp; Automation Migration <span class="badge effort-med">Medium Effort</span></h2>
+<h2 id="gap-analysis">8. Feature Gap Analysis</h2>
+
+<p>Complete list of Claude Code features with no or partial OpenCode equivalent. Use as a quick reference when evaluating whether a specific workflow can be migrated.</p>
 
 <div class="table-wrap">
 <table>
 <thead>
-<tr><th>Scenario</th><th>Claude Code</th><th>OpenCode</th></tr>
-</thead>
-<tbody>
-<tr><td><strong>GitHub Actions</strong></td><td><code>anthropics/claude-code-action</code></td><td>OpenCode GitHub Action available</td></tr>
-<tr><td><strong>GitLab CI</strong></td><td>Native <code>claude</code> in pipeline</td><td><code>opencode</code> CLI in any CI; GitLab plugin adds MR/issue/pipeline tools</td></tr>
-<tr><td><strong>One-shot mode</strong></td><td><code>claude -p "review this PR"</code></td><td><code>opencode -p "review this PR"</code></td></tr>
-<tr><td><strong>PR review automation</strong></td><td>Claude Code + GitHub MCP</td><td>OpenCode + GitHub MCP — same pattern</td></tr>
-<tr><td><strong>Scheduled tasks</strong></td><td>Claude Code in cron</td><td>OpenCode in cron — same pattern</td></tr>
-</tbody>
-</table>
-</div>
-
-
-<!-- ========================================================================== -->
-<!-- 13. TEAM & ENTERPRISE -->
-<!-- ========================================================================== -->
-<h2 id="enterprise">13. Team &amp; Enterprise Migration <span class="badge effort-high">High Effort</span></h2>
-
-<div class="table-wrap">
-<table>
-<thead>
-<tr><th>Feature</th><th>Claude Code</th><th>OpenCode</th></tr>
-</thead>
-<tbody>
-<tr><td><strong>Managed config</strong></td><td>MDM/OS policy, <code>managed-settings.json</code>, server-managed settings</td><td>Central config file (Enterprise), macOS MDM managed preferences</td></tr>
-<tr><td><strong>Force login</strong></td><td><code>forceLoginMethod</code>, <code>forceLoginOrgUUID</code></td><td>SSO via central config + internal AI gateway</td></tr>
-<tr><td><strong>Network control</strong></td><td>Sandbox network allow/deny domains</td><td>Internal AI gateway — all requests routed through org infrastructure</td></tr>
-<tr><td><strong>Data residency</strong></td><td>API-level via Bedrock/Vertex regions</td><td>No code storage by design; self-hosted share infrastructure on roadmap</td></tr>
-<tr><td><strong>Tool restrictions</strong></td><td>Managed allow/deny permissions, sandbox enforcement</td><td>Permissions config in central config</td></tr>
-<tr><td><strong>MCP management</strong></td><td><code>managed-mcp.json</code> (exclusive control), allowlists/denylists</td><td>Central config prescribes MCP servers</td></tr>
-<tr><td><strong>Private registries</strong></td><td>Standard npm authentication</td><td><code>.npmrc</code> support — authenticate to JFrog Artifactory, Nexus, etc. before launching</td></tr>
-<tr><td><strong>Pricing</strong></td><td>Per-seat (Pro/Max/Team/Enterprise) or API consumption</td><td>Per-seat (Enterprise); using own LLM gateway = no token charges</td></tr>
-</tbody>
-</table>
-</div>
-
-<div class="callout tip">
-  <strong>OpenCode Enterprise approach:</strong> Deploy a central config that locks down providers, enforces SSO, and routes all traffic through your internal AI gateway. No code is stored by OpenCode — processing runs locally or via direct provider API calls. Contact <code>contact@anoma.ly</code> for enterprise rollout.
-</div>
-
-
-<!-- ========================================================================== -->
-<!-- 14. MIGRATION BY PROJECT TYPE -->
-<!-- ========================================================================== -->
-<h2 id="project-types">14. Migration Guidance by Project Type</h2>
-
-<div class="card-grid">
-  <a class="card" href="#coding-project">
-    <div class="card-icon">🖥️</div>
-    <h4>Standard Coding Projects</h4>
-    <p>Primarily conversational AI pair programming — reading code, making edits, writing tests, git operations. Low-to-medium effort, 1–3 days.</p>
-  </a>
-  <a class="card" href="#prompt-project">
-    <div class="card-icon">🔧</div>
-    <h4>Prompt/Skill-Driven Projects</h4>
-    <p>Heavy use of custom skills, hooks, plugins, and subagents. High effort, 1–4 weeks, significant workflow redesign required.</p>
-  </a>
-  <a class="card" href="#monorepo">
-    <div class="card-icon">📦</div>
-    <h4>Monorepo Projects</h4>
-    <p>Multiple packages, nested configs, path-scoped rules. Medium effort, ~1 week, agent-based approach recommended.</p>
-  </a>
-</div>
-
-<h3 id="coding-project">14.1 Standard Coding Projects <span class="badge effort-low">Low–Medium Effort</span></h3>
-
-<p>For projects that use Claude Code primarily as an AI pair programmer:</p>
-
-<div class="steps">
-  <div class="step">
-    <div class="step-title">Convert CLAUDE.md</div>
-    <p>Run <code>/init</code> to generate AGENTS.md, then merge any custom conventions from your CLAUDE.md. The daily conversational workflow is nearly identical.</p>
-  </div>
-  <div class="step">
-    <div class="step-title">Replicate permissions</div>
-    <p>Translate permission rules to OpenCode's simpler permission model. Configure <code>"permission": { "edit": "ask", "bash": "ask" }</code> if you want Claude Code's default prompting behavior.</p>
-  </div>
-  <div class="step">
-    <div class="step-title">Set up formatters</div>
-    <p>Configure formatters to replace any PostToolUse lint hooks.</p>
-  </div>
-  <div class="step">
-    <div class="step-title">Update CI/CD</div>
-    <p>Update CI pipelines to use <code>opencode</code> instead of <code>claude</code>.</p>
-  </div>
-</div>
-
-<p><strong>Estimated effort: 1–3 days.</strong> Most of the work is configuration translation.</p>
-
-<h3 id="prompt-project">14.2 Prompt/Skill-Driven Projects <span class="badge effort-high">High Effort</span></h3>
-
-<p>For projects heavily reliant on Claude Code's extensibility:</p>
-
-<div class="steps">
-  <div class="step">
-    <div class="step-title">Audit your extensions</div>
-    <p>Inventory every skill, command, hook, plugin, subagent, and MCP server. Document what each one does and which team workflows depend on it.</p>
-  </div>
-  <div class="step">
-    <div class="step-title">Migrate skills &amp; commands first</div>
-    <p>Convert <code>.claude/skills/</code> and <code>.claude/commands/</code> to <code>.opencode/commands/</code>. Replace <code>!`cmd`</code> dynamic injection with pre-computed context in wrapper scripts, or accept static templates.</p>
-  </div>
-  <div class="step">
-    <div class="step-title">Replace hooks — the hard part</div>
-    <p>For each hook, identify the appropriate replacement: formatters for lint-on-save, pre-commit hooks for guardrails, wrapper scripts for session setup, external watchers for auto-commit.</p>
-  </div>
-  <div class="step">
-    <div class="step-title">Recreate agents</div>
-    <p>Convert subagent definitions to OpenCode agents with appropriate tool restrictions. Recreate Explore-like agents for research tasks.</p>
-  </div>
-  <div class="step">
-    <div class="step-title">Restructure plugins</div>
-    <p>Package as npm modules or shared <code>.opencode/</code> directories. Since OpenCode has no namespace system, ensure command names are globally unique.</p>
-  </div>
-</div>
-
-<p><strong>Estimated effort: 1–4 weeks</strong> depending on hook complexity and number of plugins.</p>
-
-<h3 id="monorepo">14.3 Monorepo Projects <span class="badge effort-med">Medium Effort</span></h3>
-
-<p>Claude Code's nested CLAUDE.md discovery and path-scoped rules were built with monorepos in mind. OpenCode takes a flatter approach:</p>
-
-<ol>
-  <li><strong>Instructions:</strong> Use glob patterns in the <code>instructions</code> array to pull in rules from sub-packages</li>
-  <li><strong>Path-scoped rules:</strong> Use the agent-based approach — create specialized agents per package with their own instruction files</li>
-  <li><strong>No <code>claudeMdExcludes</code> needed:</strong> OpenCode only loads explicitly listed files — no risk of picking up unrelated configs</li>
-  <li><strong>Run from package directory:</strong> For focused work, launch OpenCode from a specific package directory with a package-specific <code>opencode.json</code></li>
-</ol>
-
-
-<!-- ========================================================================== -->
-<!-- 15. MIGRATION CHECKLIST -->
-<!-- ========================================================================== -->
-<h2 id="checklist">15. Migration Checklist</h2>
-
-<div class="migration-step">
-<h4>Phase 1 — Assessment (1–2 days)</h4>
-<ul class="checklist">
-  <li><input type="checkbox"> Inventory all CLAUDE.md files (project, user, managed) and their <code>@imports</code></li>
-  <li><input type="checkbox"> Inventory all <code>.claude/rules/</code> files and their path scopes</li>
-  <li><input type="checkbox"> Inventory all skills (<code>.claude/skills/</code>) and commands (<code>.claude/commands/</code>)</li>
-  <li><input type="checkbox"> Inventory all hooks (in settings.json, settings.local.json, and plugins)</li>
-  <li><input type="checkbox"> Inventory all plugins and their components (skills, hooks, MCP, agents, LSP, monitors)</li>
-  <li><input type="checkbox"> Inventory all MCP servers and their authentication methods</li>
-  <li><input type="checkbox"> Inventory all subagent definitions (<code>.claude/agents/</code>)</li>
-  <li><input type="checkbox"> Inventory all permission rules and modes</li>
-  <li><input type="checkbox"> Review auto memory at <code>~/.claude/projects/&lt;project&gt;/memory/</code> and extract valuable learnings</li>
-  <li><input type="checkbox"> Identify CI/CD pipelines that invoke Claude Code</li>
-  <li><input type="checkbox"> Survey team members on their daily workflow patterns and customizations</li>
-</ul>
-</div>
-
-<div class="migration-step">
-<h4>Phase 2 — Setup (1–2 days)</h4>
-<ul class="checklist">
-  <li><input type="checkbox"> Install OpenCode on all developer machines</li>
-  <li><input type="checkbox"> Configure providers and API keys via <code>/connect</code></li>
-  <li><input type="checkbox"> Run <code>/init</code> in each project to generate AGENTS.md</li>
-  <li><input type="checkbox"> Set up global config at <code>~/.config/opencode/opencode.json</code></li>
-  <li><input type="checkbox"> Configure desired model and default agent</li>
-  <li><input type="checkbox"> Upgrade terminal emulator if needed (WezTerm, Ghostty, Kitty, or Alacritty recommended)</li>
-</ul>
-</div>
-
-<div class="migration-step">
-<h4>Phase 3 — Config Migration (2–5 days)</h4>
-<ul class="checklist">
-  <li><input type="checkbox"> Merge CLAUDE.md content into AGENTS.md + instruction files</li>
-  <li><input type="checkbox"> Convert <code>.claude/rules/</code> to instruction files (flattened or agent-scoped)</li>
-  <li><input type="checkbox"> Translate settings.json permissions to opencode.json</li>
-  <li><input type="checkbox"> Migrate skills to <code>.opencode/commands/</code> or <code>.opencode/skills/</code></li>
-  <li><input type="checkbox"> Replace dynamic injection (<code>!`cmd`</code>) with wrapper scripts or static templates</li>
-  <li><input type="checkbox"> Set up formatters for auto-format/lint on save</li>
-  <li><input type="checkbox"> Migrate MCP server configs to opencode.json <code>"mcp"</code> key</li>
-  <li><input type="checkbox"> Recreate subagents as OpenCode agents with tool restrictions</li>
-  <li><input type="checkbox"> Restructure plugins as npm packages or shared <code>.opencode/</code> directories</li>
-</ul>
-</div>
-
-<div class="migration-step">
-<h4>Phase 4 — Hook Replacements (1–4 weeks)</h4>
-<ul class="checklist">
-  <li><input type="checkbox"> Configure formatters for all PostToolUse lint/format hooks</li>
-  <li><input type="checkbox"> Implement pre-commit hooks (husky, lefthook) for guardrails previously in PreToolUse</li>
-  <li><input type="checkbox"> Create wrapper scripts for SessionStart setup tasks</li>
-  <li><input type="checkbox"> Set up external monitoring for notification hooks (if needed)</li>
-  <li><input type="checkbox"> Redesign workflows that relied on <code>additionalContext</code> injection</li>
-  <li><input type="checkbox"> Test that all hook-dependent behaviors are covered by replacements</li>
-</ul>
-</div>
-
-<div class="migration-step">
-<h4>Phase 5 — CI/CD &amp; Enterprise (1–3 days)</h4>
-<ul class="checklist">
-  <li><input type="checkbox"> Update GitHub Actions to use OpenCode action or CLI</li>
-  <li><input type="checkbox"> Update GitLab CI to use <code>opencode</code> CLI</li>
-  <li><input type="checkbox"> Configure enterprise central config (if applicable)</li>
-  <li><input type="checkbox"> Set up SSO and internal AI gateway (if applicable)</li>
-  <li><input type="checkbox"> Deploy managed preferences via MDM (if applicable)</li>
-  <li><input type="checkbox"> Configure private npm registry access via <code>.npmrc</code> if needed</li>
-</ul>
-</div>
-
-<div class="migration-step">
-<h4>Phase 6 — Validation &amp; Rollout (1–2 weeks)</h4>
-<ul class="checklist">
-  <li><input type="checkbox"> Run a pilot with 1–2 team members on a non-critical project</li>
-  <li><input type="checkbox"> Verify all commands and skills work as expected</li>
-  <li><input type="checkbox"> Verify MCP integrations connect and function correctly</li>
-  <li><input type="checkbox"> Verify CI/CD pipelines pass with OpenCode</li>
-  <li><input type="checkbox"> Verify formatters and guardrails trigger correctly</li>
-  <li><input type="checkbox"> Document OpenCode-specific workflows for the team</li>
-  <li><input type="checkbox"> Train team members on new workflows and key differences</li>
-  <li><input type="checkbox"> Full team rollout — make OpenCode the primary tool</li>
-  <li><input type="checkbox"> Archive old <code>.claude/</code> directories and CLAUDE.md files (keep for reference)</li>
-</ul>
-</div>
-
-
-<!-- ========================================================================== -->
-<!-- 16. FEATURE GAP ANALYSIS -->
-<!-- ========================================================================== -->
-<h2 id="gap-analysis">16. Feature Gap Analysis</h2>
-
-<p>Features present in Claude Code with no or partial equivalent in OpenCode. Use this as a reference when evaluating whether specific workflows can be migrated.</p>
-
-<div class="table-wrap">
-<table>
-<thead>
-<tr><th style="width:4%"></th><th style="width:30%">Claude Code Feature</th><th style="width:42%">Gap Description</th><th style="width:24%">Replacement Strategy</th></tr>
+<tr><th style="width:4%"></th><th style="width:24%">Claude Code Feature</th><th style="width:28%">OpenCode Status</th><th style="width:44%">Replacement Strategy</th></tr>
 </thead>
 <tbody>
 <tr>
-  <td class="cross">✗</td>
+  <td class="gap-unavailable">✗</td>
   <td><strong>Hooks system</strong> (24+ events, 5 types)</td>
-  <td>No lifecycle hook infrastructure in OpenCode</td>
+  <td>No lifecycle hook infrastructure</td>
   <td>Formatters, pre-commit hooks, wrapper scripts, file watchers</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
+  <td class="gap-unavailable">✗</td>
   <td><strong>Auto memory</strong></td>
   <td>No automatic cross-session learning</td>
   <td>Maintain AGENTS.md manually; make updates part of code review</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
+  <td class="gap-unavailable">✗</td>
   <td><strong>Dynamic injection</strong> (<code>!`cmd`</code>)</td>
-  <td>No shell execution in skill/command templates</td>
-  <td>Wrapper scripts pre-compute context; static templates</td>
+  <td>No shell execution in command templates</td>
+  <td>Wrapper scripts pre-compute context; use <code>{file:...}</code> substitution</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
-  <td><strong>Agent teams</strong></td>
-  <td>No multi-session coordination with shared task lists</td>
-  <td>Run independent sessions; use external orchestration</td>
+  <td class="gap-unavailable">✗</td>
+  <td><strong>Agent teams</strong> (multi-session coordination)</td>
+  <td>No multi-session coordination</td>
+  <td>Parallel independent sessions; external orchestration (LangChain, CrewAI)</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
-  <td><strong>Explore agent</strong></td>
+  <td class="gap-unavailable">✗</td>
+  <td><strong>Explore agent</strong> (built-in read-only research)</td>
   <td>No optimized read-only research subagent</td>
   <td>Create custom agent with <code>"write": false, "bash": false</code></td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
-  <td><strong>Plan agent</strong></td>
+  <td class="gap-unavailable">✗</td>
+  <td><strong>Plan agent</strong> (built-in architecture planning)</td>
   <td>No dedicated architecture planning subagent</td>
-  <td>Use OpenCode's <code>Tab</code>-toggle plan mode</td>
+  <td>Use OpenCode's <code>Tab</code>-toggle plan mode; create a custom "architect" agent</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
+  <td class="gap-unavailable">✗</td>
   <td><strong>OS-level sandboxing</strong></td>
-  <td>No filesystem or network sandbox for Bash commands</td>
-  <td>Docker containers, macOS sandbox, seccomp profiles</td>
+  <td>No filesystem or network sandbox for Bash</td>
+  <td>Docker containers, macOS sandbox profiles, Linux seccomp</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
-  <td><strong>MCP channels</strong></td>
+  <td class="gap-unavailable">✗</td>
+  <td><strong>MCP channels</strong> (push-based events)</td>
   <td>No push-based event stream from MCP servers</td>
   <td>Poll-based MCP tool invocation; external webhook handlers</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
-  <td><strong>MCP elicitation</strong></td>
+  <td class="gap-unavailable">✗</td>
+  <td><strong>MCP elicitation</strong> (server → user dialogs)</td>
   <td>No MCP server → user input request dialog</td>
-  <td>Inline prompts in session; pre-configured MCP tool inputs</td>
+  <td>Inline prompts in session; pre-configure MCP tool inputs</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
+  <td class="gap-unavailable">✗</td>
   <td><strong>MCP OAuth 2.0</strong></td>
   <td>No OAuth flow for MCP server authentication</td>
-  <td>Use API-key-based MCP servers; deploy auth proxy if needed</td>
+  <td>Use API-key-based MCP servers; deploy auth proxy for OAuth-only servers</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
-  <td><strong>MCP tool search</strong></td>
+  <td class="gap-unavailable">✗</td>
+  <td><strong>MCP tool search</strong> (deferred loading)</td>
   <td>No documented deferred tool loading</td>
-  <td>Connect fewer servers; use <code>alwaysLoad</code>-equivalent selectively</td>
+  <td>Connect fewer MCP servers per session; be selective</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
-  <td><strong>Slack interface</strong></td>
-  <td>No Slack integration for conversational coding</td>
-  <td>Use OpenCode's CLI, TUI, Web, or IDE interfaces</td>
-</tr>
-<tr>
-  <td class="cross">✗</td>
-  <td><strong>JetBrains IDE extension</strong></td>
-  <td>IDE extension support may differ from Claude Code's JetBrains plugin</td>
-  <td>Evaluate OpenCode's IDE extension; use TUI as fallback</td>
-</tr>
-<tr>
-  <td class="cross">✗</td>
+  <td class="gap-unavailable">✗</td>
   <td><strong>CLAUDE.md directory walking</strong></td>
-  <td>No automatic discovery of instruction files from parent directories</td>
+  <td>No auto-discovery of parent directory configs</td>
   <td>Explicitly list all instruction files in <code>opencode.json</code></td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
+  <td class="gap-unavailable">✗</td>
   <td><strong>Path-scoped rules</strong></td>
-  <td>No rules that auto-load based on file path being edited</td>
-  <td>Agent-based scoping or accept global instruction loading</td>
+  <td>No rules that auto-load based on file path</td>
+  <td>Agent-based scoping; flatten into global instruction files</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
+  <td class="gap-unavailable">✗</td>
   <td><strong>Skill auto-invocation</strong></td>
-  <td>Claude doesn't automatically load skills based on task context</td>
+  <td>Commands are only user-invoked (<code>/name</code>)</td>
   <td>Invoke commands manually; put always-needed knowledge in instruction files</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
-  <td><strong>Per-skill <code>allowed-tools</code></strong></td>
-  <td>Tool restrictions are per-agent, not per-command/skill</td>
-  <td>Create dedicated agents for commands that need tool restrictions</td>
-</tr>
-<tr>
-  <td class="cross">✗</td>
+  <td class="gap-unavailable">✗</td>
   <td><strong>Plugin namespacing</strong></td>
   <td>No <code>/plugin:command</code> namespace isolation</td>
   <td>Use unique command name prefixes; document naming conventions</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
+  <td class="gap-unavailable">✗</td>
   <td><strong>Plugin marketplaces</strong></td>
-  <td>No centralized plugin discovery and installation</td>
+  <td>No centralized plugin discovery and install</td>
   <td>Distribute via npm; document in team wiki</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
+  <td class="gap-unavailable">✗</td>
   <td><strong>Native auto-update</strong></td>
   <td>No background automatic updates</td>
   <td><code>brew upgrade</code>, <code>npm update -g</code>, or <code>choco upgrade</code></td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
+  <td class="gap-unavailable">✗</td>
   <td><strong>Managed MCP exclusive control</strong></td>
-  <td>No <code>managed-mcp.json</code> for locking down MCP servers</td>
+  <td>No <code>managed-mcp.json</code> for locking down MCP</td>
   <td>Central config prescribes MCP servers; Enterprise plan for enforcement</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
+  <td class="gap-unavailable">✗</td>
   <td><strong>Fine-grained Bash permission parsing</strong></td>
-  <td>Permissions don't parse compound commands or handle subcommand matching</td>
+  <td>Permissions don't parse compound commands</td>
   <td>Use exact patterns; restrict to safe command prefixes</td>
 </tr>
 <tr>
-  <td class="cross">✗</td>
+  <td class="gap-unavailable">✗</td>
   <td><strong>Read/Edit path deny rules</strong></td>
-  <td>No gitignore-pattern file access rules for built-in tools</td>
+  <td>No gitignore-pattern file access rules</td>
   <td>OS-level file permissions; containerization</td>
 </tr>
-</tbody>
-</table>
-</div>
-
-
-<!-- ========================================================================== -->
-<!-- 17. COMMANDS REFERENCE & ADVANCED FEATURES -->
-<!-- ========================================================================== -->
-<h2 id="commands-features">17. Commands Reference &amp; Advanced Features</h2>
-
-<p>This section maps Claude Code's built-in slash commands and advanced capabilities — including AgentTeam and UltraThink — to their OpenCode equivalents. Use it as a quick reference during daily work and when planning which workflows need adaptation.</p>
-
-<h3 id="slash-commands">17.1 Slash Commands Mapping</h3>
-
-<div class="table-wrap">
-<table>
-<thead>
-<tr><th style="width:26%">Claude Code Command</th><th style="width:26%">OpenCode Equivalent</th><th style="width:48%">Notes</th></tr>
-</thead>
-<tbody>
 <tr>
-  <td><code>/help</code></td>
-  <td><code>/help</code></td>
-  <td>Both show available commands and usage. OpenCode's help is context-sensitive based on your config.</td>
+  <td class="gap-unavailable">✗</td>
+  <td><strong>Slack interface</strong></td>
+  <td>No Slack integration for conversational coding</td>
+  <td>Use OpenCode's CLI, TUI, Web, or IDE interfaces</td>
 </tr>
 <tr>
-  <td><code>/clear</code></td>
-  <td>Start new session</td>
-  <td>OpenCode has no in-session clear. Press <code>Ctrl+C</code> to interrupt, then start a fresh session. Session list available in TUI.</td>
+  <td class="gap-unavailable">✗</td>
+  <td><strong>JetBrains IDE extension</strong></td>
+  <td>IDE extension support may differ</td>
+  <td>Evaluate OpenCode's IDE extension; use TUI as fallback</td>
 </tr>
 <tr>
-  <td><code>/model</code></td>
-  <td>Edit <code>opencode.json</code> or use <code>/connect</code></td>
-  <td>OpenCode doesn't switch models mid-session via slash command. Set <code>"model"</code> in config or per-agent, or connect a different provider. Changing the active model for the default agent requires editing <code>opencode.json</code> and restarting.</td>
-</tr>
-<tr>
-  <td><code>/plan</code></td>
-  <td><code>Tab</code> key</td>
-  <td>Claude Code toggles plan mode with <code>Shift+Tab</code> or <code>/plan</code>. OpenCode toggles between plan and build mode with the <code>Tab</code> key in TUI.</td>
-</tr>
-<tr>
-  <td><code>/init</code></td>
-  <td><code>/init</code></td>
-  <td>Claude Code generates <code>CLAUDE.md</code>; OpenCode generates <code>AGENTS.md</code>. OpenCode's version also reads existing CLAUDE.md, .cursorrules, and .windsurfrules to bootstrap.</td>
-</tr>
-<tr>
-  <td><code>/login</code></td>
-  <td><code>/connect</code></td>
-  <td>Claude Code logs into Anthropic account. OpenCode connects to 75+ providers — select one and enter API credentials.</td>
-</tr>
-<tr>
-  <td><code>/plugin</code></td>
-  <td>Edit <code>opencode.json</code> <code>"plugin"</code> array</td>
-  <td>Claude Code has <code>/plugin install|uninstall|list</code>. OpenCode loads plugins from <code>.opencode/plugins/</code> or npm packages listed in config — no interactive install command.</td>
-</tr>
-<tr>
-  <td><code>/memory</code></td>
-  <td><span class="cross">—</span></td>
-  <td>Claude Code opens the auto-memory editor. OpenCode has no auto-memory system — maintain <code>AGENTS.md</code> manually.</td>
-</tr>
-<tr>
-  <td><code>/compact</code></td>
-  <td>Automatic</td>
-  <td>Claude Code lets you manually trigger context compaction. OpenCode handles context window management automatically — no manual trigger needed.</td>
-</tr>
-<tr>
-  <td><code>/review</code></td>
-  <td>Natural language: "review this PR"</td>
-  <td>Claude Code's <code>/review</code> triggers the code-review skill. In OpenCode, describe what you want reviewed — the agent will read and evaluate the code.</td>
-</tr>
-<tr>
-  <td><code>/security-review</code></td>
-  <td>Natural language or custom command</td>
-  <td>Claude Code has a dedicated security-review skill. In OpenCode, ask the agent to "do a security review" or create a custom <code>/security-review</code> command in <code>.opencode/commands/</code>.</td>
-</tr>
-<tr>
-  <td><code>/export</code></td>
-  <td><code>/share</code></td>
-  <td>Claude Code exports conversation. OpenCode's <code>/share</code> uploads the session and copies a shareable link. Data is sent to opencode.ai CDN (can be disabled).</td>
-</tr>
-<tr>
-  <td><code>/resume</code></td>
-  <td>TUI session list</td>
-  <td>OpenCode displays previous sessions in the TUI. Select one to resume. No equivalent slash command.</td>
-</tr>
-<tr>
-  <td><code>/cost</code></td>
-  <td>Provider-dependent</td>
-  <td>Claude Code tracks token usage and cost. OpenCode cost visibility depends on the provider — Anthropic and OpenAI show usage; local models have $0 cost.</td>
-</tr>
-<tr>
-  <td><code>/doctor</code></td>
-  <td><span class="cross">—</span></td>
-  <td>Claude Code runs system diagnostics. For OpenCode, manually check: Node.js version, provider connectivity, and config file validity.</td>
-</tr>
-<tr>
-  <td><code>/status</code></td>
-  <td><span class="cross">—</span></td>
-  <td>Claude Code shows session status, model, token usage. OpenCode doesn't have a status command — check the TUI header for the current model and agent.</td>
-</tr>
-<tr>
-  <td><code>/stats</code></td>
-  <td><span class="cross">—</span></td>
-  <td>Claude Code shows usage statistics across sessions. No equivalent in OpenCode — track externally via provider dashboards.</td>
-</tr>
-<tr>
-  <td><code>/config</code></td>
-  <td>Edit <code>opencode.json</code> directly</td>
-  <td>Claude Code opens settings in editor. OpenCode has no config command — edit <code>opencode.json</code> or <code>~/.config/opencode/opencode.json</code> manually.</td>
-</tr>
-<tr>
-  <td><code>/agents</code></td>
-  <td>Agent config in <code>opencode.json</code></td>
-  <td>Claude Code may list available agents. In OpenCode, agents are defined in config and listed in the TUI agent picker.</td>
-</tr>
-<tr>
-  <td><code>/permissions</code></td>
-  <td>Edit <code>opencode.json</code> <code>"permission"</code> key</td>
-  <td>Both tools configure permissions through their respective config files. No interactive permission editor in OpenCode.</td>
-</tr>
-<tr>
-  <td><code>/context</code></td>
-  <td><span class="cross">—</span></td>
-  <td>Claude Code shows what's loaded in context. OpenCode doesn't visualize context — check the <code>"instructions"</code> array in <code>opencode.json</code> to see what's loaded.</td>
-</tr>
-<tr>
-  <td><code>/ide</code></td>
-  <td>IDE extension</td>
-  <td>Claude Code can attach to VS Code / JetBrains. OpenCode offers its own IDE extension for in-editor use.</td>
+  <td class="gap-partial">◐</td>
+  <td><strong>UltraThink</strong> (extended reasoning mode)</td>
+  <td>Partial — depends on model support</td>
+  <td>Use Claude Opus 4.7 or OpenAI o-series with thinking budgets via Anthropic/OpenAI providers</td>
 </tr>
 </tbody>
 </table>
-</div>
-
-<div class="callout tip">
-  <strong>Creating custom commands:</strong> OpenCode's command system lets you add custom slash commands to replace any missing Claude Code commands. Define them in <code>.opencode/commands/&lt;name&gt;.md</code> or in the <code>"command"</code> key of <code>opencode.json</code>, using <code>$ARGUMENTS</code> for dynamic input.
-</div>
-
-<h3 id="advanced-features">17.2 AgentTeam, UltraThink &amp; Other Advanced Features</h3>
-
-<p>Claude Code ships with several advanced features that power users rely on. Here's how they map — or don't map — to OpenCode.</p>
-
-<div class="table-wrap">
-<table>
-<thead>
-<tr><th style="width:24%">Claude Code Feature</th><th style="width:30%">OpenCode Status</th><th style="width:46%">Details &amp; Workarounds</th></tr>
-</thead>
-<tbody>
-<tr>
-  <td><strong>AgentTeam</strong></td>
-  <td><span class="cross">Not available</span></td>
-  <td>
-    <p>Claude Code's AgentTeam (experimental) launches multiple subagents in parallel, coordinates them via a shared task list, and merges results. Agents can spawn other agents, delegate subtasks, and hand off work.</p>
-    <p><strong>Workaround:</strong> Run multiple OpenCode sessions in separate terminals with different agent configs. Use a task file or external orchestrator (Makefile, CI pipeline, custom script) to coordinate work. For complex multi-agent workflows, consider LangChain or CrewAI as an external orchestration layer.</p>
-  </td>
-</tr>
-<tr>
-  <td><strong>UltraThink</strong></td>
-  <td><span class="check">Partial</span></td>
-  <td>
-    <p>Claude Code's UltraThink mode enables extended reasoning with higher token budgets for complex problems. The model spends more time "thinking" before responding.</p>
-    <p><strong>OpenCode equivalent:</strong> Use models that support extended thinking (Claude Opus 4.x with <code>thinking</code> parameter, OpenAI o-series). Configure the model in <code>opencode.json</code> with extended thinking enabled. Not all providers expose thinking budget controls — Claude models via Anthropic provider and OpenAI o-series models are your best options.</p>
-    <pre><code>// opencode.json — using Claude with extended thinking
-{
-  "model": "claude-opus-4-7",
-  "agent": {
-    "deep-thinker": {
-      "model": "claude-opus-4-7",
-      "description": "Extended reasoning for complex problems",
-      "prompt": "{file:./opencode/agents/deep-thinker-prompt.md}"
-    }
-  }
-}</code></pre>
-  </td>
-</tr>
-<tr>
-  <td><strong>Plan Mode (thinking)</strong></td>
-  <td><span class="check">Available via Tab toggle</span></td>
-  <td>
-    <p>Claude Code plan mode ensures the model plans before writing code. OpenCode's plan/build toggle (<code>Tab</code>) provides the same pattern: in plan mode the agent analyzes and designs; in build mode it makes changes.</p>
-  </td>
-</tr>
-<tr>
-  <td><strong>Context: fork</strong></td>
-  <td><span class="check">Available via subagents</span></td>
-  <td>
-    <p>Claude Code skills can run in a forked (isolated) context. OpenCode achieves this by running a task in a dedicated subagent — the subagent gets a clean context and returns results to the main session.</p>
-  </td>
-</tr>
-<tr>
-  <td><strong>Dynamic injection (<code>!`cmd`</code>)</strong></td>
-  <td><span class="cross">Not available</span></td>
-  <td>
-    <p>Claude Code can execute shell commands at skill-load time and inject the output into the prompt. This enables context-aware skills that adapt to the current repo state.</p>
-    <p><strong>Workaround:</strong> Create a wrapper script that pre-computes the dynamic context and appends it to a file, then reference that file in your instruction files. For commands that need live state, run a pre-step manually or via a wrapper before invoking the command.</p>
-    <pre><code># Example wrapper for dynamic context
-#!/bin/bash
-# pre-compute dynamic context
-git log --oneline -20 > /tmp/recent-commits.txt
-opencode -p "Review these recent commits: {file:/tmp/recent-commits.txt}"</code></pre>
-  </td>
-</tr>
-<tr>
-  <td><strong>Subagent delegation</strong></td>
-  <td><span class="check">Available</span></td>
-  <td>
-    <p>Both tools let the main agent spawn subagents for parallel or isolated work. Claude Code has built-in Explore (read-only research) and Plan (architecture) agents plus custom ones. OpenCode supports custom agents with tool restrictions for the same patterns — create an "explore" agent with <code>"write": false, "bash": false</code>.</p>
-  </td>
-</tr>
-<tr>
-  <td><strong>Compaction strategies</strong></td>
-  <td><span class="check">Automatic</span></td>
-  <td>
-    <p>Claude Code offers manual (<code>/compact</code>) and automatic context compaction. OpenCode handles compaction internally — the model manages its own context window. No user control, but also no need to think about it.</p>
-  </td>
-</tr>
-<tr>
-  <td><strong>Auto memory</strong></td>
-  <td><span class="cross">Not available</span></td>
-  <td>
-    <p>Claude Code learns from each session and persists insights to <code>~/.claude/projects/&lt;name&gt;/memory/</code>. OpenCode treats each session independently. Team conventions and learnings must be manually added to <code>AGENTS.md</code> or instruction files.</p>
-  </td>
-</tr>
-<tr>
-  <td><strong>Terminal sandbox</strong></td>
-  <td><span class="cross">Not available</span></td>
-  <td>
-    <p>Claude Code sandboxes Bash commands at the OS level (macOS Seatbelt, Linux landlock/seccomp). OpenCode has no sandbox — commands run with the user's full permissions. Use Docker, a VM, or macOS sandbox profiles externally for untrusted workloads.</p>
-  </td>
-</tr>
-<tr>
-  <td><strong>Multi-model routing</strong></td>
-  <td><span class="check">Available via agents</span></td>
-  <td>
-    <p>Claude Code can route different tasks to different Claude models (Haiku for simple edits, Opus for complex reasoning). OpenCode does this natively per-agent: set <code>"model"</code> on each agent definition. Plus you can mix providers — use Haiku via Anthropic for quick tasks and Opus via Bedrock for heavy work.</p>
-  </td>
-</tr>
-<tr>
-  <td><strong>Prompt caching</strong></td>
-  <td><span class="check">Provider-dependent</span></td>
-  <td>
-    <p>Claude Code uses Anthropic's prompt caching for cost savings on long conversations. In OpenCode, prompt caching behavior depends on the provider — Anthropic models support it; other providers may or may not.</p>
-  </td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<div class="callout warn">
-  <strong>AgentTeam is the biggest architectural gap.</strong> If your workflow depends on coordinated multi-agent work (parallel agents sharing a task list, spawning sub-agents, merging results), there is no direct substitute in OpenCode. Evaluate whether you can break the workflow into sequential steps, run sessions in parallel manually, or use an external orchestration framework like LangChain, CrewAI, or a CI pipeline DAG.
-</div>
-
-<div class="callout info">
-  <strong>UltraThink / Extended thinking:</strong> When using Claude models via the Anthropic provider in OpenCode, extended thinking is controlled by the model configuration. Claude Opus 4.7 and Claude Sonnet 4.6 support configurable thinking budgets. The thinking tokens are not visible in the chat, but the model uses them internally for deeper reasoning — similar to how Claude Code's UltraThink works. Check your provider's documentation for thinking budget parameters you can pass through OpenCode's model config.
 </div>
 
 
 <!-- ===== FOOTER ===== -->
-<div style="margin-top:64px; padding-top:24px; border-top:1px solid var(--gray-200); font-size:0.88em; color:var(--gray-500);">
+<div class="footer">
   <p>Migration guide compiled from <a href="https://code.claude.com/docs">Claude Code documentation</a> and <a href="https://opencode.ai/docs/">OpenCode documentation</a>. Last updated: May 2026.</p>
 </div>
 
